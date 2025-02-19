@@ -1,0 +1,24 @@
+@use "globals" as *;
+
+.site-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: clip;
+}
+
+.container {
+    padding: 0 24px;
+    margin: 0 auto;
+    max-width: $maxWidthContainer;
+    width: 100%;
+
+    @media (max-width: 767px) {
+        padding: 0 16px;
+    }
+}
+
+.site-page {
+    padding-bottom: 64px;
+    flex: 1 1 auto;
+}

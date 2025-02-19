@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('html/_head.html', { 
+        'title': 'Arena',
+        'styles': ['css/main.min.css', 'css/swiper-bundle.min.css']
+    })
+    <body>
+        <div class="site-wrapper">
+            @@include('html/ui/_header.html',{})
+            <main class="site-page">
+            </main>
+            @@include('html/ui/_footer.html',{})
+        </div>
+        <script defer src="js/lozad.min.js"></script>
+        <script defer src="js/swiper-bundle.min.js"></script>
+        <script defer src="js/script.js"></script>
+    </body>
+</html>
