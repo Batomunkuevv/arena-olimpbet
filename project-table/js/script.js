@@ -8,6 +8,10 @@ const fillTable = () => {
             name: 'Поиск',
             slug: 'search.html'
         },
+        {
+            name: 'Статья',
+            slug: 'article.html'
+        },
     ]
     const DOMAIN = window.location.href.includes('index.html') ? window.location.href.replace('index.html', '') : window.location.href;
     const projectTable = document.querySelector('.project-table');

@@ -1,4 +1,6 @@
 class Arena {
+    MAX_MEDIA_992 = window.matchMedia('(max-width: 991px)');
+
     constructor() {
         this.init();
     }
@@ -8,12 +10,16 @@ class Arena {
         this.initFoldedElements();
         this.initAccordions();
         this.initSliders();
+        this.initPopups();
     }
 
     initHeader() {
+        const self = this;
         const header = document.querySelector('.site-header');
 
         if (!header) return;
+
+        const pageSidebar = document.querySelector('.site-page__sidebars:not(.site-page__sidebars--mobile)');
 
         animateHeader();
         initHeaderSearch();
@@ -98,12 +104,26 @@ class Arena {
 
                 if (scrollTop > lastScrollTop && scrollTop > 100) {
                     header.classList.add('is-scrolling-down');
+                    upSidebar();
                 } else {
                     header.classList.remove('is-scrolling-down');
+                    downSidebar();
                 }
 
                 lastScrollTop = scrollTop;
             }
+        }
+
+        function upSidebar() {
+            if (!pageSidebar || self.MAX_MEDIA_992.matches) return;
+
+            pageSidebar.style.top = '24px';
+        }
+
+        function downSidebar() {
+            if (!pageSidebar || self.MAX_MEDIA_992.matches) return;
+
+            pageSidebar.style = '';
         }
     }
 
@@ -143,6 +163,61 @@ class Arena {
                         },
                     }
                     break;
+                case 'gallery': {
+                    const galleryPrev = slider.closest('.gallery').querySelector('.gallery__arrow--prev');
+                    const galleryNext = slider.closest('.gallery').querySelector('.gallery__arrow--next');
+
+                    options = {
+                        ...options,
+                        loop: true,
+                        pagination: {
+                            el: '.gallery__pagination',
+                            clickable: true,
+                        },
+                        navigation: {
+                            prevEl: galleryPrev,
+                            nextEl: galleryNext,
+                        }
+                    }
+
+                    break;
+                }
+                case 'other-articles': {
+                    const otherArticlesPrev = slider.closest('.other-articles').querySelector('.other-articles__arrow--prev');
+                    const otherArticlesNext = slider.closest('.other-articles').querySelector('.other-articles__arrow--next');
+
+                    options = {
+                        ...options,
+                        slidesPerView: 'auto',
+                        spaceBetween: 16,
+                        loop: true,
+                        navigation: {
+                            prevEl: otherArticlesPrev,
+                            nextEl: otherArticlesNext,
+                        },
+                        breakpoints: {
+                            0: {
+                                loop: false,
+                                enabled: false,
+                            },
+                            479: {
+                                slidesPerView: 2,
+                            },
+                            767: {
+                                spaceBetween: 24,
+                                slidesPerView: 3,
+                            },
+                            992: {
+                                slidesPerView: 2
+                            },
+                            1200: {
+                                slidesPerView: 3
+                            }
+                        }
+                    }
+
+                    break;
+                }
                 case "sports-tabs": {
                     const sportsTabsPrev = slider.closest('.sports-tabs').querySelector('.sports-tabs__arrow--prev');
                     const sportsTabsNext = slider.closest('.sports-tabs').querySelector('.sports-tabs__arrow--next');
@@ -246,6 +321,71 @@ class Arena {
                     }
                 });
             })
+        }
+    }
+
+    initPopups() {
+        const popupsContainer = document.querySelector(".popups");
+
+        if (!popupsContainer) return;
+
+        const popups = popupsContainer.querySelectorAll(".popup");
+
+        popups.forEach((popup) => {
+            const popupType = popup.dataset.popup;
+            const popupButton = document.querySelector(`[data-popup-open="${popupType}"]`);
+            const popupContent = popup.querySelector('.popup__content');
+
+            if (popupButton) popupButton.addEventListener('click', handlePopupButton);
+            popup.addEventListener('click', handleClickOverlay);
+
+            function handlePopupButton() {
+                openPopup(popup)
+            }
+
+            function handleClickOverlay(e) {
+                const { target } = e;
+
+                if (!popupContent.contains(target)) {
+                    closePopup(popup);
+                }
+            }
+        })
+
+        popupsContainer.addEventListener("click", function (e) {
+            if (e.target.closest("[data-popup-close]")) {
+                closeAllPopups();
+            }
+        });
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                closeAllPopups();
+            }
+        });
+
+        function openPopup(popup) {
+            document.body.classList.add("is-lock");
+            popupsContainer.classList.add("popups--open");
+            popup.classList.add("popup--active");
+        }
+
+        function closePopup(popup) {
+            document.body.classList.remove("is-lock");
+            popupsContainer.classList.remove("popups--open");
+            popup.classList.remove("popup--active");
+        }
+
+        function closeAllPopups() {
+            const activePopups = [...popups].filter(popup => popup.classList.contains("popup--active"));
+
+            if (!activePopups) return;
+
+            activePopups.forEach((popup) => {
+                popup.classList.remove("popup--active");
+            });
+            popupsContainer.classList.remove("popups--open");
+            document.body.classList.remove("is-lock");
         }
     }
 }
