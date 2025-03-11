@@ -217,45 +217,27 @@
       </div>
     </header>
 
-    <main class="site-page site-page--homepage">
+    <main class="site-page">
       <div class="container">
+        <nav class="search-page__breadcrumbs breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+          <ol class="breadcrumbs__list">
+            <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <meta itemprop="position" content="1" />
+              <meta itemprop="name" content="Главная" />
+              <a class="breadcrumbs__link" itemprop="item" href="/homepage.html">Главная</a>
+            </li>
+            <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <meta itemprop="position" content="2" />
+              <meta itemprop="name" content="Тег «АПЛ» " />
+              <span class="breadcrumbs__current"> Тег «АПЛ» </span>
+            </li>
+          </ol>
+        </nav>
+
+        <h1 class="h1">Материалы на тему «АПЛ»</h1>
         <div class="site-page__body">
           <div class="site-page__content">
-            <div class="banners-slider">
-              <div data-slider="banners" class="banners-slider__body swiper">
-                <div class="banners-slider__wrapper swiper-wrapper">
-                  <div class="banners-slider__slide swiper-slide">
-                    <a href="#" class="banners-slider__slide-ibg ibg">
-                      <picture>
-                        <source srcset="images/homepage/banner-mobile.png" media="(max-width: 479px)" />
-                        <source srcset="images/homepage/banner-tablet.png" media="(max-width: 991px)" />
-                        <img src="images/homepage/banner.png" alt="Баннер" title="Баннер" />
-                      </picture>
-                    </a>
-                  </div>
-                  <div class="banners-slider__slide swiper-slide">
-                    <a href="#" class="banners-slider__slide-ibg ibg">
-                      <picture>
-                        <source srcset="images/homepage/banner-mobile.png" media="(max-width: 479px)" />
-                        <source srcset="images/homepage/banner-tablet.png" media="(max-width: 991px)" />
-                        <img src="images/homepage/banner.png" alt="Баннер" title="Баннер" />
-                      </picture>
-                    </a>
-                  </div>
-                  <div class="banners-slider__slide swiper-slide">
-                    <a href="#" class="banners-slider__slide-ibg ibg">
-                      <picture>
-                        <source srcset="images/homepage/banner-mobile.png" media="(max-width: 479px)" />
-                        <source srcset="images/homepage/banner-tablet.png" media="(max-width: 991px)" />
-                        <img src="images/homepage/banner.png" alt="Баннер" title="Баннер" />
-                      </picture>
-                    </a>
-                  </div>
-                </div>
-                <div class="banners-slider__pagination swiper-pagination"></div>
-              </div>
-            </div>
-            <div class="sports-tabs">
+            <div class="sports-tabs sports-tabs--category">
               <div data-slider="sports-tabs" class="sports-tabs__slider swiper">
                 <div class="sports-tabs__wrapper swiper-wrapper">
                   <div class="sports-tabs__slide swiper-slide">
@@ -388,9 +370,7 @@
                 </svg>
               </button>
             </div>
-
-            <section class="materials">
-              <h1 class="materials__title h1">Ставки на спорт в Казахстане</h1>
+            <section class="materials materials--category">
               <div class="materials__body">
                 <ul class="materials__list">
                   <li class="materials__item">
@@ -400,12 +380,6 @@
                           <div class="article-card__thumbnail-ibg ibg">
                             <img src="images/homepage/materials/01.jpg" alt="Image" title="Image" />
                           </div>
-                        </div>
-                        <div class="article-card__mark mark mark--exclusive">
-                          <span class="mark__icon">
-                            <img src="images/icons/fire.svg" alt="Fire icon" title="Fire icon" />
-                          </span>
-                          Эксклюзив
                         </div>
                         <div class="article-card__content">
                           <div class="article-card__info">
@@ -436,19 +410,29 @@
                     </article>
                   </li>
                   <li class="materials__item">
-                    <article class="article-card">
-                      <a href="#" class="article-card__link">
-                        <div class="article-card__thumbnail">
-                          <div class="article-card__thumbnail-ibg ibg">
-                            <img src="images/homepage/materials/03.jpg" alt="Image" title="Image" />
+                    <article class="forecast-card__body">
+                      <a href="#" class="forecast-card__link white-shape">
+                        <div class="forecast-card__clash clash clash--in-materials">
+                          <div class="clash__side clash__side--in-materials">
+                            <img src="images/logos/08.png" alt="08" title="08" />
+                          </div>
+                          <div class="clash__info clash__info--in-materials">
+                            <time datetime="2024-10-25" class="clash__date">25.10.2024</time>
+                            <p class="clash__time">23:45</p>
+                          </div>
+                          <div class="clash__side clash__side--in-materials">
+                            <img src="images/logos/09.png" alt="09" title="09" />
                           </div>
                         </div>
-                        <div class="article-card__content">
-                          <div class="article-card__info">
-                            <div class="article-card__category">Прогнозы</div>
-                            <time class="article-card__date" datetime="2024-10-25">25.10.2024</time>
+                        <h3 class="forecast-card__title">Прогноз на матч «Аякс» — «Галатасарай»: гости продолжат беспроигрышную серию</h3>
+                        <div class="forecast-card__bottom">
+                          <div class="forecast-card__tab tab">
+                            <span class="tab__icon">
+                              <img src="images/icons/basketball-ball-orange.svg" alt="Basketball ball" title="Basketball ball" />
+                            </span>
+                            <span class="tab__text">КФ: 2.43</span>
                           </div>
-                          <h3 class="article-card__title">Прогноз на матч «Арсенал» — «Борнмут»: гости не проиграют</h3>
+                          <p class="forecast-card__author">Михаил Краймер</p>
                         </div>
                       </a>
                     </article>
@@ -458,17 +442,41 @@
                       <a href="#" class="article-card__link">
                         <div class="article-card__thumbnail">
                           <div class="article-card__thumbnail-ibg ibg">
-                            <img src="images/homepage/materials/04.jpg" alt="Image" title="Image" />
+                            <img src="images/category/01.jpg" alt="Image" title="Image" />
                           </div>
                         </div>
                         <div class="article-card__content">
                           <div class="article-card__info">
-                            <div class="article-card__category">Прогнозы</div>
+                            <div class="article-card__category">Про ставки</div>
                             <time class="article-card__date" datetime="2024-10-25">25.10.2024</time>
                           </div>
-                          <h3 class="article-card__title">Paris Masters-2024: расписание, участники и призовой фонд</h3>
+                          <h3 class="article-card__title">Спортсмены возвращают медали Олимпиады-2024 из-за брака</h3>
                         </div>
                       </a>
+                    </article>
+                  </li>
+                  <li class="materials__item materials__item--video">
+                    <article data-popup-open="video-1" class="video-card">
+                      <div class="video-card__image">
+                        <div class="video-card__mark mark mark--video">
+                          <span class="mark__icon mark__icon--video">
+                            <img src="images/icons/video.svg" alt="Video icon" title="Video icon" />
+                          </span>
+                          Видео
+                        </div>
+                        <div class="video-card__image-ibg ibg">
+                          <img src="images/category/02.jpg" alt="Video thumbnail" />
+                        </div>
+                      </div>
+                      <div class="video-card__content">
+                        <div class="video-card__info">
+                          <div class="video-card__category">Видео</div>
+                          <time datetime="2024-10-25" class="video-card__date video-card__date--in-info">25.10.2024</time>
+                        </div>
+                        <h3 class="video-card__title video-card__title--in-materials">
+                          Допинг-тест Феррао | Что нужно знать Кайрату о Картахене перед Финалом Четырех ЛЧ | Кирилл Земсков
+                        </h3>
+                      </div>
                     </article>
                   </li>
                   <li class="materials__item">
@@ -515,7 +523,98 @@
                       </a>
                     </article>
                   </li>
+                  <li class="materials__item">
+                    <article class="forecast-card__body">
+                      <a href="#" class="forecast-card__link white-shape">
+                        <div class="forecast-card__clash clash clash--in-materials">
+                          <div class="clash__side clash__side--in-materials">
+                            <img src="images/logos/06.png" alt="06" title="06" />
+                          </div>
+                          <div class="clash__info clash__info--in-materials">
+                            <time datetime="2024-10-25" class="clash__date">25.10.2024</time>
+                            <p class="clash__time">23:45</p>
+                          </div>
+                          <div class="clash__side clash__side--in-materials">
+                            <img src="images/logos/07.png" alt="07" title="07" />
+                          </div>
+                        </div>
+                        <h3 class="forecast-card__title">Прогноз на матч «Динамо» Москва – «Сибирь»: сибиряки не смогут взять реванш в Москве</h3>
+                        <div class="forecast-card__bottom">
+                          <div class="forecast-card__tab tab">
+                            <span class="tab__icon">
+                              <img src="images/icons/puck-gray.svg" alt="Puck" title="Puck" />
+                            </span>
+                            <span class="tab__text">КФ: 2.43</span>
+                          </div>
+                          <p class="forecast-card__author">Михаил Краймер</p>
+                        </div>
+                      </a>
+                    </article>
+                  </li>
+                  <li class="materials__item">
+                    <article class="forecast-card__body">
+                      <a href="#" class="forecast-card__link white-shape">
+                        <div class="forecast-card__clash clash clash--in-materials">
+                          <div class="clash__side clash__side--in-materials">
+                            <img src="images/logos/04.png" alt="04" title="04" />
+                          </div>
+                          <div class="clash__info clash__info--in-materials">
+                            <time datetime="2024-10-25" class="clash__date">25.10.2024</time>
+                            <p class="clash__time">23:45</p>
+                          </div>
+                          <div class="clash__side clash__side--in-materials">
+                            <img src="images/logos/14.png" alt="14" title="14" />
+                          </div>
+                        </div>
+                        <h3 class="forecast-card__title">Прогноз на матч «Фенербахче» — «Монца»: гости не проиграют крупно</h3>
+                        <div class="forecast-card__bottom">
+                          <div class="forecast-card__tab tab">
+                            <span class="tab__icon">
+                              <img src="images/icons/volleyball-ball-blue.svg" alt="Volleyball ball" title="Volleyball ball" />
+                            </span>
+                            <span class="tab__text">КФ: 2.43</span>
+                          </div>
+                          <p class="forecast-card__author">Михаил Краймер</p>
+                        </div>
+                      </a>
+                    </article>
+                  </li>
                 </ul>
+                <nav class="materials__pagination pagination">
+                  <a href="#" class="pagination__arrow arrow">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M10.2071 12.7071C10.5976 12.3166 10.5976 11.6834 10.2071 11.2929L6.91421 8L10.2071 4.70711C10.5976 4.31658 10.5976 3.68342 10.2071 3.29289C9.81658 2.90237 9.18342 2.90237 8.79289 3.29289L4.79289 7.29289C4.40237 7.68342 4.40237 8.31658 4.79289 8.70711L8.79289 12.7071C9.18342 13.0976 9.81658 13.0976 10.2071 12.7071Z" fill="currentColor" />
+                    </svg>
+                  </a>
+                  <ul class="pagination__list">
+                    <li class="pagination__item">
+                      <a href="#" class="pagination__link"> 1 </a>
+                    </li>
+                    <li class="pagination__item">
+                      <a href="#" class="pagination__link"> 2 </a>
+                    </li>
+                    <li class="pagination__item">
+                      <a href="#" class="pagination__link"> 3 </a>
+                    </li>
+                    <li class="pagination__item">
+                      <a href="#" class="pagination__link"> 4 </a>
+                    </li>
+                    <li class="pagination__item">
+                      <div class="pagination__current">5</div>
+                    </li>
+                    <li class="pagination__item">
+                      <div class="pagination__link">...</div>
+                    </li>
+                    <li class="pagination__item">
+                      <a href="#" class="pagination__link"> 85 </a>
+                    </li>
+                  </ul>
+                  <a href="#" class="pagination__arrow arrow">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M5.79289 12.7071C5.40237 12.3166 5.40237 11.6834 5.79289 11.2929L9.08579 8L5.79289 4.70711C5.40237 4.31658 5.40237 3.68342 5.79289 3.29289C6.18342 2.90237 6.81658 2.90237 7.20711 3.29289L11.2071 7.29289C11.5976 7.68342 11.5976 8.31658 11.2071 8.70711L7.20711 12.7071C6.81658 13.0976 6.18342 13.0976 5.79289 12.7071Z" fill="currentColor" />
+                    </svg>
+                  </a>
+                </nav>
                 <aside class="news-feed sidebar">
                   <h3 class="news-feed__title sidebar__title">Лента новостей</h3>
                   <ul class="news-feed__list">
@@ -617,580 +716,241 @@
                         </a>
                       </article>
                     </li>
+                    <li class="news-feed__item">
+                      <article class="news-feed__item-body">
+                        <a href="#" class="news-feed__item-link">
+                          <div class="news-feed__item-info">
+                            <div class="news-feed__item-category">Новости</div>
+                            <time datetime="2024-10-25" class="news-feed__item-date">25.10.2024</time>
+                          </div>
+                          <h3 class="news-feed__item-title">«У нас с Буффоном разные истории»: Игорь Щацкий дал первый комментарий</h3>
+                        </a>
+                      </article>
+                    </li>
+                    <li class="news-feed__item">
+                      <article class="news-feed__item-body">
+                        <a href="#" class="news-feed__item-link">
+                          <div class="news-feed__item-info">
+                            <div class="news-feed__item-category">Новости</div>
+                            <time datetime="2024-10-25" class="news-feed__item-date">25.10.2024</time>
+                          </div>
+                          <h3 class="news-feed__item-title">Марат Омаров избран президентом КФФ</h3>
+                        </a>
+                      </article>
+                    </li>
+                    <li class="news-feed__item">
+                      <article class="news-feed__item-body">
+                        <a href="#" class="news-feed__item-link">
+                          <div class="news-feed__item-info">
+                            <div class="news-feed__item-category">Новости</div>
+                            <time datetime="2024-10-25" class="news-feed__item-date">25.10.2024</time>
+                          </div>
+                          <h3 class="news-feed__item-title">Марат Омаров избран президентом КФФ</h3>
+                        </a>
+                      </article>
+                    </li>
+                    <li class="news-feed__item">
+                      <article class="news-feed__item-body">
+                        <a href="#" class="news-feed__item-link">
+                          <div class="news-feed__item-info">
+                            <div class="news-feed__item-category">Новости</div>
+                            <time datetime="2024-10-25" class="news-feed__item-date">25.10.2024</time>
+                          </div>
+                          <h3 class="news-feed__item-title">«У нас с Буффоном разные истории»: Игорь Щацкий дал первый комментарий</h3>
+                        </a>
+                      </article>
+                    </li>
+                    <li class="news-feed__item">
+                      <article class="news-feed__item-body">
+                        <a href="#" class="news-feed__item-link">
+                          <div class="news-feed__item-info">
+                            <div class="news-feed__item-category">Новости</div>
+                            <time datetime="2024-10-25" class="news-feed__item-date">25.10.2024</time>
+                          </div>
+                          <h3 class="news-feed__item-title">«У нас с Буффоном разные истории»: Игорь Щацкий дал первый комментарий</h3>
+                        </a>
+                      </article>
+                    </li>
+                    <li class="news-feed__item">
+                      <article class="news-feed__item-body">
+                        <a href="#" class="news-feed__item-link">
+                          <div class="news-feed__item-info">
+                            <div class="news-feed__item-category">
+                              <span class="news-feed__item-category-icon">
+                                <img src="images/icons/fire.svg" alt="Fire icon" title="Fire icon" />
+                              </span>
+                              Прогнозы
+                            </div>
+                            <time datetime="2024-10-25" class="news-feed__item-date">25.10.2024</time>
+                          </div>
+                          <h3 class="news-feed__item-title">Мераб Двалишвили — Умар Нурмагомедов. Чемпионская разборка в легчайшем весе...</h3>
+                        </a>
+                      </article>
+                    </li>
+                    <li class="news-feed__item">
+                      <article class="news-feed__item-body">
+                        <a href="#" class="news-feed__item-link">
+                          <div class="news-feed__item-info">
+                            <div class="news-feed__item-category">Новости</div>
+                            <time datetime="2024-10-25" class="news-feed__item-date">25.10.2024</time>
+                          </div>
+                          <h3 class="news-feed__item-title">Марат Омаров избран...</h3>
+                        </a>
+                      </article>
+                    </li>
                   </ul>
                 </aside>
 
               </div>
             </section>
-            <section class="forecasts">
-              <h2 class="forecasts__title h2">Прогнозы</h2>
-              <ul class="forecasts__list">
-                <li class="forecasts__item forecast-card">
-                  <article class="forecast-card__body">
-                    <a href="#" class="forecast-card__link white-shape">
-                      <div class="forecast-card__clash clash">
-                        <div class="clash__side">
-                          <img src="images/logos/03.png" alt="01" title="01" />
-                        </div>
-                        <div class="clash__info">
-                          <time datetime="2024-10-25" class="clash__date">25.10.2024</time>
-                          <p class="clash__time">23:45</p>
-                        </div>
-                        <div class="clash__side">
-                          <img src="images/logos/01.png" alt="02" title="02" />
-                        </div>
-                      </div>
-                      <h3 class="forecast-card__title">Прогноз на матч «Реал» — «Милан»: хозяева реабилитируются после поражения от «Барселоны»...</h3>
-                      <div class="forecast-card__bottom">
-                        <div class="forecast-card__tab tab">
-                          <span class="tab__icon">
-                            <img src="images/icons/football-ball-green.svg" alt="Football ball" title="Football ball" />
-                          </span>
-                          <span class="tab__text">КФ: 1.38</span>
-                        </div>
-                        <p class="forecast-card__author">Жардем Иргалиев</p>
-                      </div>
-                    </a>
-                  </article>
-                </li>
-                <li class="forecasts__item forecast-card">
-                  <article class="forecast-card__body">
-                    <a href="#" class="forecast-card__link white-shape">
-                      <div class="forecast-card__clash clash">
-                        <div class="clash__side">
-                          <img src="images/logos/04.png" alt="04" title="04" />
-                        </div>
-                        <div class="clash__info">
-                          <time datetime="2024-10-25" class="clash__date">25.10.2024</time>
-                          <p class="clash__time">23:45</p>
-                        </div>
-                        <div class="clash__side">
-                          <img src="images/logos/05.png" alt="05" title="05" />
-                        </div>
-                      </div>
-                      <h3 class="forecast-card__title">Прогноз на матч «Фенербахче» — «Монца»: гости не проиграют крупно</h3>
-                      <div class="forecast-card__bottom">
-                        <div class="forecast-card__tab tab">
-                          <span class="tab__icon">
-                            <img src="images/icons/volleyball-ball-blue.svg" alt="Volleyball ball" title="Volleyball ball" />
-                          </span>
-                          <span class="tab__text">КФ: 2.43</span>
-                        </div>
-                        <p class="forecast-card__author">Михаил Краймер</p>
-                      </div>
-                    </a>
-                  </article>
-                </li>
-                <li class="forecasts__item forecast-card">
-                  <article class="forecast-card__body">
-                    <a href="#" class="forecast-card__link white-shape">
-                      <div class="forecast-card__clash clash">
-                        <div class="clash__side">
-                          <img src="images/countries/czech.png" alt="Czech" title="Czech" />
-                        </div>
-                        <div class="clash__info">
-                          <time datetime="2024-10-25" class="clash__date">25.10.2024</time>
-                          <p class="clash__time">23:45</p>
-                        </div>
-                        <div class="clash__side">
-                          <img src="images/countries/georgia.png" alt="Georgia" title="Georgia" />
-                        </div>
-                      </div>
-                      <h3 class="forecast-card__title">Прогноз на матч Чехия — Грузия: соперники сыграют осторожно</h3>
-                      <div class="forecast-card__bottom">
-                        <div class="forecast-card__tab tab">
-                          <span class="tab__icon">
-                            <img src="images/icons/football-ball-green.svg" alt="Football ball" title="Football ball" />
-                          </span>
-                          <span class="tab__text">КФ: 1.38</span>
-                        </div>
-                        <p class="forecast-card__author">Жардем Иргалиев</p>
-                      </div>
-                    </a>
-                  </article>
-                </li>
-                <li class="forecasts__item forecast-card">
-                  <article class="forecast-card__body">
-                    <a href="#" class="forecast-card__link white-shape">
-                      <div class="forecast-card__clash clash">
-                        <div class="clash__side">
-                          <img src="images/logos/06.png" alt="06" title="06" />
-                        </div>
-                        <div class="clash__info">
-                          <time datetime="2024-10-25" class="clash__date">25.10.2024</time>
-                          <p class="clash__time">23:45</p>
-                        </div>
-                        <div class="clash__side">
-                          <img src="images/logos/07.png" alt="07" title="07" />
-                        </div>
-                      </div>
-                      <h3 class="forecast-card__title">Прогноз на матч «Динамо» Москва – «Сибирь»: сибиряки не смогут взять реванш в Москве</h3>
-                      <div class="forecast-card__bottom">
-                        <div class="forecast-card__tab tab">
-                          <span class="tab__icon">
-                            <img src="images/icons/puck-gray.svg" alt="Puck" title="Puck" />
-                          </span>
-                          <span class="tab__text">КФ: 2.43</span>
-                        </div>
-                        <p class="forecast-card__author">Михаил Краймер</p>
-                      </div>
-                    </a>
-                  </article>
-                </li>
-                <li class="forecasts__item forecast-card">
-                  <article class="forecast-card__body">
-                    <a href="#" class="forecast-card__link white-shape">
-                      <div class="forecast-card__clash clash">
-                        <div class="clash__side">
-                          <img src="images/logos/08.png" alt="08" title="08" />
-                        </div>
-                        <div class="clash__info">
-                          <time datetime="2024-10-25" class="clash__date">25.10.2024</time>
-                          <p class="clash__time">23:45</p>
-                        </div>
-                        <div class="clash__side">
-                          <img src="images/logos/09.png" alt="09" title="09" />
-                        </div>
-                      </div>
-                      <h3 class="forecast-card__title">Прогноз на матч «Аякс» — «Галатасарай»: гости продолжат беспроигрышную серию</h3>
-                      <div class="forecast-card__bottom">
-                        <div class="forecast-card__tab tab">
-                          <span class="tab__icon">
-                            <img src="images/icons/basketball-ball-orange.svg" alt="Basketball ball" title="Basketball ball" />
-                          </span>
-                          <span class="tab__text">КФ: 2.43</span>
-                        </div>
-                        <p class="forecast-card__author">Михаил Краймер</p>
-                      </div>
-                    </a>
-                  </article>
-                </li>
-                <li class="forecasts__item forecast-card">
-                  <article class="forecast-card__body">
-                    <a href="#" class="forecast-card__link white-shape">
-                      <div class="forecast-card__clash clash">
-                        <div class="clash__side clash__side--people">
-                          <img src="images/peoples/03.png" alt="03" title="03" />
-                        </div>
-                        <div class="clash__info">
-                          <time datetime="2024-10-25" class="clash__date">25.10.2024</time>
-                          <p class="clash__time">23:45</p>
-                        </div>
-                        <div class="clash__side clash__side--people">
-                          <img src="images/peoples/04.png" alt="04" title="04" />
-                        </div>
-                      </div>
-                      <h3 class="forecast-card__title">Александр Зверев — Тэйлор Фриц: прогноз Сергея Мазура с коэффициентом выше 2.0</h3>
-                      <div class="forecast-card__bottom">
-                        <div class="forecast-card__tab tab">
-                          <span class="tab__icon">
-                            <img src="images/icons/tennis-ball-green.svg" alt="Tennis ball" title="Tennis ball" />
-                          </span>
-                          <span class="tab__text">КФ: 2.43</span>
-                        </div>
-                        <p class="forecast-card__author">Михаил Краймер</p>
-                      </div>
-                    </a>
-                  </article>
-                </li>
-                <li class="forecasts__item forecast-card">
-                  <article class="forecast-card__body">
-                    <a href="#" class="forecast-card__link white-shape">
-                      <div class="forecast-card__clash clash">
-                        <div class="clash__side clash__side--people">
-                          <img src="images/peoples/05.png" alt="05" title="05" />
-                        </div>
-                        <div class="clash__info">
-                          <time datetime="2024-10-25" class="clash__date">25.10.2024</time>
-                          <p class="clash__time">23:45</p>
-                        </div>
-                        <div class="clash__side clash__side--people">
-                          <img src="images/peoples/06.png" alt="06" title="06" />
-                        </div>
-                      </div>
-                      <h3 class="forecast-card__title">Прогноз на бой Ян Сяонянь — Табата Риччи: китаянка задавит бразильянку</h3>
-                      <div class="forecast-card__bottom">
-                        <div class="forecast-card__tab tab">
-                          <span class="tab__icon">
-                            <img src="images/icons/boxing-glove-red.svg" alt="Boxing glove" title="Boxing glove" />
-                          </span>
-                          <span class="tab__text">КФ: 2.43</span>
-                        </div>
-                        <p class="forecast-card__author">Михаил Краймер</p>
-                      </div>
-                    </a>
-                  </article>
-                </li>
-                <li class="forecasts__item forecast-card">
-                  <article class="forecast-card__body">
-                    <a href="#" class="forecast-card__link white-shape">
-                      <div class="forecast-card__clash clash">
-                        <div class="clash__side">
-                          <img src="images/logos/10.png" alt="10" title="10" />
-                        </div>
-                        <div class="clash__info">
-                          <time datetime="2024-10-25" class="clash__date">25.10.2024</time>
-                          <p class="clash__time">23:45</p>
-                        </div>
-                        <div class="clash__side">
-                          <img src="images/logos/11.png" alt="11" title="11" />
-                        </div>
-                      </div>
-                      <h3 class="forecast-card__title">Прогноз на матч 3DMAX — TSM. Больше шансов на победу у французов 3DMAX</h3>
-                      <div class="forecast-card__bottom">
-                        <div class="forecast-card__tab tab">
-                          <span class="tab__icon">
-                            <img src="images/icons/gamepad-purple.svg" alt="Gamepad" title="Gamepad" />
-                          </span>
-                          <span class="tab__text">КФ: 2.43</span>
-                        </div>
-                        <p class="forecast-card__author">Михаил Краймер</p>
-                      </div>
-                    </a>
-                  </article>
-                </li>
-                <li class="forecasts__item forecast-card">
-                  <article class="forecast-card__body">
-                    <a href="#" class="forecast-card__link white-shape">
-                      <div class="forecast-card__clash clash">
-                        <div class="clash__side">
-                          <img src="images/logos/12.png" alt="12" title="12" />
-                        </div>
-                        <div class="clash__info">
-                          <time datetime="2024-10-25" class="clash__date">25.10.2024</time>
-                          <p class="clash__time">23:45</p>
-                        </div>
-                        <div class="clash__side">
-                          <img src="images/logos/13.png" alt="13" title="13" />
-                        </div>
-                      </div>
-                      <h3 class="forecast-card__title">Прогноз на матч «Калгари» – «Лос-Анджелес»: «короли» не отдадут очки сопернику</h3>
-                      <div class="forecast-card__bottom">
-                        <div class="forecast-card__tab tab">
-                          <span class="tab__icon">
-                            <img src="images/icons/basketball-ball-orange.svg" alt="Basketball ball" title="Basketball ball" />
-                          </span>
-                          <span class="tab__text">КФ: 2.43</span>
-                        </div>
-                        <p class="forecast-card__author">Михаил Краймер</p>
-                      </div>
-                    </a>
-                  </article>
-                </li>
-              </ul>
-              <a href="#" class="block-button button">все прогнозы</a>
-            </section>
-
-            <section class="videos-block black-section">
-              <h2 class="black-section__title h2">Видео</h2>
-              <ul class="videos-block__list">
-                <li class="videos-block__item">
-                  <article data-popup-open="video-1" class="video-card">
-                    <div class="video-card__image video-card__image--on-black">
-                      <div class="video-card__image-ibg video-card__image-ibg--on-black ibg">
-                        <img src="images/videos/01.jpg" alt="Video thumbnail" />
-                      </div>
-                    </div>
-                    <div class="video-card__content video-card__content--on-black">
-                      <time datetime="2024-10-25" class="video-card__date video-card__date--on-black">25.10.2024</time>
-                      <h3 class="video-card__title video-card__title--on-black">
-                        Чего ждать от Аята. Почему Валиуллина не было на Чемпионате Мира. Ввод аутов руками это нормально?...
-                      </h3>
-                    </div>
-                  </article>
-                </li>
-                <li class="videos-block__item">
-                  <article data-popup-open="video-2" class="video-card">
-                    <div class="video-card__image video-card__image--on-black">
-                      <div class="video-card__image-ibg video-card__image-ibg--on-black ibg">
-                        <img src="images/videos/02.jpg" alt="Video thumbnail" />
-                      </div>
-                    </div>
-                    <div class="video-card__content video-card__content--on-black">
-                      <time datetime="2024-10-25" class="video-card__date video-card__date--on-black">25.10.2024</time>
-                      <h3 class="video-card__title video-card__title--on-black">
-                        Официально! ШАВКАТ РАХМОНОВ против чемпиона UFC! Как он отберет титул у Белала?
-                      </h3>
-                    </div>
-                  </article>
-                </li>
-                <li class="videos-block__item">
-                  <article data-popup-open="video-3" class="video-card">
-                    <div class="video-card__image video-card__image--on-black">
-                      <div class="video-card__image-ibg video-card__image-ibg--on-black ibg">
-                        <img src="images/videos/03.jpg" alt="Video thumbnail" />
-                      </div>
-                    </div>
-                    <div class="video-card__content video-card__content--on-black">
-                      <time datetime="2024-10-25" class="video-card__date video-card__date--on-black">25.10.2024</time>
-                      <h3 class="video-card__title video-card__title--on-black">
-                        Новый топовый боец UFC из Казахстана? Асу Алмабаев против черного пояса из Бразилии. Как победить?
-                      </h3>
-                    </div>
-                  </article>
-                </li>
-                <li class="videos-block__item">
-                  <article data-popup-open="video-4" class="video-card">
-                    <div class="video-card__image video-card__image--on-black">
-                      <div class="video-card__image-ibg video-card__image-ibg--on-black ibg">
-                        <img src="images/videos/04.jpg" alt="Video thumbnail" />
-                      </div>
-                    </div>
-                    <div class="video-card__content video-card__content--on-black">
-                      <time datetime="2024-10-25" class="video-card__date video-card__date--on-black">25.10.2024</time>
-                      <h3 class="video-card__title video-card__title--on-black">
-                        Новый топовый боец UFC из Казахстана? Асу Алмабаев против черного пояса из Бразилии. Как победить?
-                      </h3>
-                    </div>
-                  </article>
-                </li>
-              </ul>
-              <a href="#" class="videos-block__button block-button button">все видео</a>
-            </section>
-            <section class="how-start">
-              <h2 class="how-start__title h2">С чего начать?</h2>
-              <div class="how-start__body">
-                <ul class="how-start__list white-shape">
-                  <li class="how-start__item">
-                    <article class="how-start__item-body">
-                      <a href="#" class="how-start__item-link">
-                        <h3 class="how-start__item-title">Как изменить пароль</h3>
-                        <div class="how-start__item-image">
-                          <div class="how-start__item-image-ibg ibg">
-                            <picture>
-                              <source srcset="images/homepage/how-start/01-mobile.jpg" media="(max-width: 767px)" />
-                              <img src="images/homepage/how-start/01.jpg" alt="Image" title="Image" />
-                            </picture>
-                          </div>
-                        </div>
-                      </a>
-                    </article>
-                  </li>
-                  <li class="how-start__item">
-                    <article class="how-start__item-body">
-                      <a href="#" class="how-start__item-link">
-                        <h3 class="how-start__item-title">Ставка экспресс: что это такое, что учитывать и как рассчитать выигрыш</h3>
-                        <div class="how-start__item-image">
-                          <div class="how-start__item-image-ibg ibg">
-                            <picture>
-                              <source srcset="images/homepage/how-start/02-mobile.jpg" media="(max-width: 767px)" />
-                              <img src="images/homepage/how-start/02.jpg" alt="Image" title="Image" />
-                            </picture>
-                          </div>
-                        </div>
-                      </a>
-                    </article>
-                  </li>
-                  <li class="how-start__item">
-                    <article class="how-start__item-body">
-                      <a href="#" class="how-start__item-link">
-                        <h3 class="how-start__item-title">Лайв-ставки на спорт: что это такое, на что можно ставить...</h3>
-                        <div class="how-start__item-image">
-                          <div class="how-start__item-image-ibg ibg">
-                            <picture>
-                              <source srcset="images/homepage/how-start/03-mobile.jpg" media="(max-width: 767px)" />
-                              <img src="images/homepage/how-start/03.jpg" alt="Image" title="Image" />
-                            </picture>
-                          </div>
-                        </div>
-                      </a>
-                    </article>
-                  </li>
-                  <li class="how-start__item">
-                    <article class="how-start__item-body">
-                      <a href="#" class="how-start__item-link">
-                        <h3 class="how-start__item-title">Что такое одиночная ставка: примеры и правила расчета</h3>
-                        <div class="how-start__item-image">
-                          <div class="how-start__item-image-ibg ibg">
-                            <picture>
-                              <source srcset="images/homepage/how-start/04-mobile.jpg" media="(max-width: 767px)" />
-                              <img src="images/homepage/how-start/04.jpg" alt="Image" title="Image" />
-                            </picture>
-                          </div>
-                        </div>
-                      </a>
-                    </article>
-                  </li>
-                  <li class="how-start__item">
-                    <article class="how-start__item-body">
-                      <a href="#" class="how-start__item-link">
-                        <h3 class="how-start__item-title">Cash Out: что это такое, как и зачем использовать</h3>
-                        <div class="how-start__item-image">
-                          <div class="how-start__item-image-ibg ibg">
-                            <picture>
-                              <source srcset="images/homepage/how-start/05-mobile.jpg" media="(max-width: 767px)" />
-                              <img src="images/homepage/how-start/05.jpg" alt="Image" title="Image" />
-                            </picture>
-                          </div>
-                        </div>
-                      </a>
-                    </article>
-                  </li>
-                  <li class="how-start__item">
-                    <article class="how-start__item-body">
-                      <a href="#" class="how-start__item-link">
-                        <h3 class="how-start__item-title">Что такое коэффициент и как рассчитать выигрыш</h3>
-                        <div class="how-start__item-image">
-                          <div class="how-start__item-image-ibg ibg">
-                            <picture>
-                              <source srcset="images/homepage/how-start/06-mobile.jpg" media="(max-width: 767px)" />
-                              <img src="images/homepage/how-start/06.jpg" alt="Image" title="Image" />
-                            </picture>
-                          </div>
-                        </div>
-                      </a>
-                    </article>
-                  </li>
-                </ul>
-                <a href="#" class="how-start__button block-button button">все материалы</a>
-              </div>
-            </section>
 
             <div class="site-page__sidebars site-page__sidebars--mobile site-page__sidebars--in-content">
-              <aside class="top-events-sidebar sidebar">
-                <h3 class="top-events-sidebar__title sidebar__title">Топ события</h3>
-                <ul class="top-events-sidebar__list">
-                  <li class="top-events-sidebar__item">
-                    <div class="top-events-sidebar__item-clash clash">
-                      <div class="clash__side">
-                        <img src="images/logos/01.png" alt="01" title="01" />
+              <div class="site-page__sidebar">
+                <aside class="top-events-sidebar sidebar">
+                  <h3 class="top-events-sidebar__title sidebar__title">Топ события</h3>
+                  <ul class="top-events-sidebar__list">
+                    <li class="top-events-sidebar__item">
+                      <div class="top-events-sidebar__item-clash clash">
+                        <div class="clash__side">
+                          <img src="images/logos/01.png" alt="01" title="01" />
+                        </div>
+                        <div class="clash__info">
+                          <p class="clash__name">Лига Чемпионов</p>
+                          <p class="clash__timestamp">25.10 00:45</p>
+                        </div>
+                        <div class="clash__side">
+                          <img src="images/logos/02.png" alt="02" title="02" />
+                        </div>
                       </div>
-                      <div class="clash__info">
-                        <p class="clash__name">Лига Чемпионов</p>
-                        <p class="clash__timestamp">25.10 00:45</p>
+                      <ul class="top-events-sidebar__item-coefficents coefficents">
+                        <li class="coefficents__item">
+                          <button type="button" class="coefficents__button">
+                            <div class="coefficents__exodus">П1</div>
+                            <div class="coefficents__value">1.85</div>
+                          </button>
+                        </li>
+                        <li class="coefficents__item">
+                          <button type="button" class="coefficents__button">
+                            <div class="coefficents__exodus">X</div>
+                            <div class="coefficents__value">1.83</div>
+                          </button>
+                        </li>
+                        <li class="coefficents__item">
+                          <button type="button" class="coefficents__button">
+                            <div class="coefficents__exodus">П2</div>
+                            <div class="coefficents__value">2.96</div>
+                          </button>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="top-events-sidebar__item">
+                      <div class="top-events-sidebar__item-clash clash">
+                        <div class="clash__side clash__side--country">
+                          <img src="images/countries/spain.png" alt="Spain" title="Spain" />
+                        </div>
+                        <div class="clash__info">
+                          <p class="clash__name">Лига наций</p>
+                          <p class="clash__timestamp">20.11 00:45</p>
+                        </div>
+                        <div class="clash__side clash__side--country">
+                          <img src="images/countries/ireland.png" alt="Ireland" title="Ireland" />
+                        </div>
                       </div>
-                      <div class="clash__side">
-                        <img src="images/logos/02.png" alt="02" title="02" />
+                      <ul class="top-events-sidebar__item-coefficents coefficents">
+                        <li class="coefficents__item">
+                          <button type="button" class="coefficents__button">
+                            <div class="coefficents__exodus">П1</div>
+                            <div class="coefficents__value">1.85</div>
+                          </button>
+                        </li>
+                        <li class="coefficents__item">
+                          <button type="button" class="coefficents__button">
+                            <div class="coefficents__exodus">X</div>
+                            <div class="coefficents__value">1.83</div>
+                          </button>
+                        </li>
+                        <li class="coefficents__item">
+                          <button type="button" class="coefficents__button">
+                            <div class="coefficents__exodus">П2</div>
+                            <div class="coefficents__value">2.96</div>
+                          </button>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="top-events-sidebar__item">
+                      <div class="top-events-sidebar__item-clash clash">
+                        <div class="clash__side clash__side--people">
+                          <img src="images/peoples/01.png" alt="Fighter" title="Fighter" />
+                        </div>
+                        <div class="clash__info">
+                          <p class="clash__name">UFC</p>
+                          <p class="clash__timestamp">26.11 00:45</p>
+                        </div>
+                        <div class="clash__side clash__side--people">
+                          <img src="images/peoples/02.png" alt="Fighter" title="Fighter" />
+                        </div>
                       </div>
-                    </div>
-                    <ul class="top-events-sidebar__item-coefficents coefficents">
-                      <li class="coefficents__item">
-                        <button type="button" class="coefficents__button">
-                          <div class="coefficents__exodus">П1</div>
-                          <div class="coefficents__value">1.85</div>
-                        </button>
-                      </li>
-                      <li class="coefficents__item">
-                        <button type="button" class="coefficents__button">
-                          <div class="coefficents__exodus">X</div>
-                          <div class="coefficents__value">1.83</div>
-                        </button>
-                      </li>
-                      <li class="coefficents__item">
-                        <button type="button" class="coefficents__button">
-                          <div class="coefficents__exodus">П2</div>
-                          <div class="coefficents__value">2.96</div>
-                        </button>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="top-events-sidebar__item">
-                    <div class="top-events-sidebar__item-clash clash">
-                      <div class="clash__side clash__side--country">
-                        <img src="images/countries/spain.png" alt="Spain" title="Spain" />
+                      <ul class="top-events-sidebar__item-coefficents coefficents">
+                        <li class="coefficents__item">
+                          <button type="button" class="coefficents__button">
+                            <div class="coefficents__exodus">П1</div>
+                            <div class="coefficents__value">1.85</div>
+                          </button>
+                        </li>
+                        <li class="coefficents__item">
+                          <button type="button" class="coefficents__button">
+                            <div class="coefficents__exodus">П2</div>
+                            <div class="coefficents__value">2.96</div>
+                          </button>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <a href="#" class="sidebar__button button">все коэффициенты</a>
+                </aside>
+                <aside class="bonuses-sidebar sidebar">
+                  <h3 class="bonuses-sidebar__title sidebar__title">Бонусы Olimpbet</h3>
+                  <ul class="bonuses-sidebar__list">
+                    <li class="bonuses-sidebar__item">
+                      <div class="bonuses-sidebar__item-body">
+                        <div class="bonuses-sidebar__item-icon">
+                          <img src="images/icons/bonuses/tenge.svg" alt="Tenge icon" title="Tenge icon" />
+                        </div>
+                        <div class="bonuses-sidebar__item-content">
+                          <p class="bonuses-sidebar__item-title">СӘЛЕМ БОНУС</p>
+                          <p class="bonuses-sidebar__item-text">Зарегистрируйся и&nbsp;получи 1&nbsp;000 тенге гарантировано</p>
+                        </div>
                       </div>
-                      <div class="clash__info">
-                        <p class="clash__name">Лига наций</p>
-                        <p class="clash__timestamp">20.11 00:45</p>
+                      <a href="#" class="bonuses-sidebar__item-button button">Получить</a>
+                    </li>
+                    <li class="bonuses-sidebar__item">
+                      <div class="bonuses-sidebar__item-body">
+                        <div class="bonuses-sidebar__item-icon">
+                          <img src="images/icons/bonuses/telegram.svg" alt="Telegram icon" title="Telegram icon" />
+                        </div>
+                        <div class="bonuses-sidebar__item-content">
+                          <p class="bonuses-sidebar__item-title">Фрибет за&nbsp;подписку</p>
+                          <p class="bonuses-sidebar__item-text">Разыгрываем 100&nbsp;000 фрибетами за&nbsp;подписку</p>
+                        </div>
                       </div>
-                      <div class="clash__side clash__side--country">
-                        <img src="images/countries/ireland.png" alt="Ireland" title="Ireland" />
+                      <a href="#" class="bonuses-sidebar__item-button button">Получить</a>
+                    </li>
+                    <li class="bonuses-sidebar__item">
+                      <div class="bonuses-sidebar__item-body">
+                        <div class="bonuses-sidebar__item-icon">
+                          <img src="images/icons/bonuses/bonus.svg" alt="Bonus icon" title="Bonus icon" />
+                        </div>
+                        <div class="bonuses-sidebar__item-content">
+                          <p class="bonuses-sidebar__item-title">бонусный клуб</p>
+                          <p class="bonuses-sidebar__item-text">Делайте ставки и&nbsp;получайте гарантированные призы</p>
+                        </div>
                       </div>
-                    </div>
-                    <ul class="top-events-sidebar__item-coefficents coefficents">
-                      <li class="coefficents__item">
-                        <button type="button" class="coefficents__button">
-                          <div class="coefficents__exodus">П1</div>
-                          <div class="coefficents__value">1.85</div>
-                        </button>
-                      </li>
-                      <li class="coefficents__item">
-                        <button type="button" class="coefficents__button">
-                          <div class="coefficents__exodus">X</div>
-                          <div class="coefficents__value">1.83</div>
-                        </button>
-                      </li>
-                      <li class="coefficents__item">
-                        <button type="button" class="coefficents__button">
-                          <div class="coefficents__exodus">П2</div>
-                          <div class="coefficents__value">2.96</div>
-                        </button>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="top-events-sidebar__item">
-                    <div class="top-events-sidebar__item-clash clash">
-                      <div class="clash__side clash__side--people">
-                        <img src="images/peoples/01.png" alt="Fighter" title="Fighter" />
-                      </div>
-                      <div class="clash__info">
-                        <p class="clash__name">UFC</p>
-                        <p class="clash__timestamp">26.11 00:45</p>
-                      </div>
-                      <div class="clash__side clash__side--people">
-                        <img src="images/peoples/02.png" alt="Fighter" title="Fighter" />
-                      </div>
-                    </div>
-                    <ul class="top-events-sidebar__item-coefficents coefficents">
-                      <li class="coefficents__item">
-                        <button type="button" class="coefficents__button">
-                          <div class="coefficents__exodus">П1</div>
-                          <div class="coefficents__value">1.85</div>
-                        </button>
-                      </li>
-                      <li class="coefficents__item">
-                        <button type="button" class="coefficents__button">
-                          <div class="coefficents__exodus">П2</div>
-                          <div class="coefficents__value">2.96</div>
-                        </button>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-                <a href="#" class="sidebar__button button">все коэффициенты</a>
-              </aside>
-              <aside class="bonuses-sidebar sidebar">
-                <h3 class="bonuses-sidebar__title sidebar__title">Бонусы Olimpbet</h3>
-                <ul class="bonuses-sidebar__list">
-                  <li class="bonuses-sidebar__item">
-                    <div class="bonuses-sidebar__item-body">
-                      <div class="bonuses-sidebar__item-icon">
-                        <img src="images/icons/bonuses/tenge.svg" alt="Tenge icon" title="Tenge icon" />
-                      </div>
-                      <div class="bonuses-sidebar__item-content">
-                        <p class="bonuses-sidebar__item-title">СӘЛЕМ БОНУС</p>
-                        <p class="bonuses-sidebar__item-text">Зарегистрируйся и&nbsp;получи 1&nbsp;000 тенге гарантировано</p>
-                      </div>
-                    </div>
-                    <a href="#" class="bonuses-sidebar__item-button button">Получить</a>
-                  </li>
-                  <li class="bonuses-sidebar__item">
-                    <div class="bonuses-sidebar__item-body">
-                      <div class="bonuses-sidebar__item-icon">
-                        <img src="images/icons/bonuses/telegram.svg" alt="Telegram icon" title="Telegram icon" />
-                      </div>
-                      <div class="bonuses-sidebar__item-content">
-                        <p class="bonuses-sidebar__item-title">Фрибет за&nbsp;подписку</p>
-                        <p class="bonuses-sidebar__item-text">Разыгрываем 100&nbsp;000 фрибетами за&nbsp;подписку</p>
-                      </div>
-                    </div>
-                    <a href="#" class="bonuses-sidebar__item-button button">Получить</a>
-                  </li>
-                  <li class="bonuses-sidebar__item">
-                    <div class="bonuses-sidebar__item-body">
-                      <div class="bonuses-sidebar__item-icon">
-                        <img src="images/icons/bonuses/bonus.svg" alt="Bonus icon" title="Bonus icon" />
-                      </div>
-                      <div class="bonuses-sidebar__item-content">
-                        <p class="bonuses-sidebar__item-title">бонусный клуб</p>
-                        <p class="bonuses-sidebar__item-text">Делайте ставки и&nbsp;получайте гарантированные призы</p>
-                      </div>
-                    </div>
-                    <a href="#" class="bonuses-sidebar__item-button button">Вступить</a>
-                  </li>
-                </ul>
-              </aside>
+                      <a href="#" class="bonuses-sidebar__item-button button">Вступить</a>
+                    </li>
+                  </ul>
+                </aside>
 
+              </div>
             </div>
             <section class="white-shape post-content">
               <h2 class="h1">Ставки на спорт с Olimpbet&nbsp;Arena</h2>
@@ -1351,7 +1111,8 @@
               <div class="accent-text">
                 <p>
                   Olimpbet — один из самых популярных казахстанских букмекеров, который принимает пари более чем на 30+ видов спорта. Широкое разнообразие ставок на
-                  популярные и второстепенные события,<a href="https://arena.olimpbet.kz/education/faq/razdel-live-v-bukmekerskoj-kontore-olimpbet/"> лайв с видеотрансляциями</a>, быстрый вывод средств и честные выплаты игрокам — вот главные особенности букмекерской конторы Olimpbet КЗ. Работает Olimpbet по лицензии №
+                  популярные и второстепенные события,<a href="https://arena.olimpbet.kz/education/faq/razdel-live-v-bukmekerskoj-kontore-olimpbet/"></a>
+                  лайв с видеотрансляциями</a>, быстрый вывод средств и честные выплаты игрокам — вот главные особенности букмекерской конторы Olimpbet КЗ. Работает Olimpbet по лицензии №
                   23019645 Комитета индустрии туризма Министерства культуры и спорта КЗ от 06.09.2023.
                 </p>
               </div>
@@ -1594,7 +1355,6 @@
         </div>
       </div>
     </footer>
-
     <div class="popups">
       <div data-popup="video-1" class="popup">
         <button type="button" data-popup-close class="popup__close">
@@ -1606,48 +1366,6 @@
           <div class="popup-video">
             <div class="popup-video__ibg ibg">
               <iframe src="https://www.youtube.com/embed/2m372C5P-j0?si=FtrATnHUfeWop03x"></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div data-popup="video-2" class="popup">
-        <button type="button" data-popup-close class="popup__close">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.468629 0.468629C1.09347 -0.15621 2.10653 -0.15621 2.73137 0.468629L8 5.73726L13.2686 0.468629C13.8935 -0.15621 14.9065 -0.15621 15.5314 0.468629C16.1562 1.09347 16.1562 2.10653 15.5314 2.73137L10.2627 8L15.5314 13.2686C16.1562 13.8935 16.1562 14.9065 15.5314 15.5314C14.9065 16.1562 13.8935 16.1562 13.2686 15.5314L8 10.2627L2.73137 15.5314C2.10653 16.1562 1.09347 16.1562 0.468629 15.5314C-0.15621 14.9065 -0.15621 13.8935 0.468629 13.2686L5.73726 8L0.468629 2.73137C-0.15621 2.10653 -0.15621 1.09347 0.468629 0.468629Z" fill="currentColor" />
-          </svg>
-        </button>
-        <div class="popup__content popup__content--video">
-          <div class="popup-video">
-            <div class="popup-video__ibg ibg">
-              <iframe class="video-card__frame" src="https://www.youtube.com/embed/TeA6CqnfId4?si=BPkMrRu4bdmVpp2o"></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div data-popup="video-3" class="popup">
-        <button type="button" data-popup-close class="popup__close">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.468629 0.468629C1.09347 -0.15621 2.10653 -0.15621 2.73137 0.468629L8 5.73726L13.2686 0.468629C13.8935 -0.15621 14.9065 -0.15621 15.5314 0.468629C16.1562 1.09347 16.1562 2.10653 15.5314 2.73137L10.2627 8L15.5314 13.2686C16.1562 13.8935 16.1562 14.9065 15.5314 15.5314C14.9065 16.1562 13.8935 16.1562 13.2686 15.5314L8 10.2627L2.73137 15.5314C2.10653 16.1562 1.09347 16.1562 0.468629 15.5314C-0.15621 14.9065 -0.15621 13.8935 0.468629 13.2686L5.73726 8L0.468629 2.73137C-0.15621 2.10653 -0.15621 1.09347 0.468629 0.468629Z" fill="currentColor" />
-          </svg>
-        </button>
-        <div class="popup__content popup__content--video">
-          <div class="popup-video">
-            <div class="popup-video__ibg ibg">
-              <iframe class="video-card__frame" src="https://www.youtube.com/embed/77ajoMZEwH0?si=no_pHCdCbCil43A6"></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div data-popup="video-4" class="popup">
-        <button type="button" data-popup-close class="popup__close">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.468629 0.468629C1.09347 -0.15621 2.10653 -0.15621 2.73137 0.468629L8 5.73726L13.2686 0.468629C13.8935 -0.15621 14.9065 -0.15621 15.5314 0.468629C16.1562 1.09347 16.1562 2.10653 15.5314 2.73137L10.2627 8L15.5314 13.2686C16.1562 13.8935 16.1562 14.9065 15.5314 15.5314C14.9065 16.1562 13.8935 16.1562 13.2686 15.5314L8 10.2627L2.73137 15.5314C2.10653 16.1562 1.09347 16.1562 0.468629 15.5314C-0.15621 14.9065 -0.15621 13.8935 0.468629 13.2686L5.73726 8L0.468629 2.73137C-0.15621 2.10653 -0.15621 1.09347 0.468629 0.468629Z" fill="currentColor" />
-          </svg>
-        </button>
-        <div class="popup__content popup__content--video">
-          <div class="popup-video">
-            <div class="popup-video__ibg ibg">
-              <iframe class="video-card__frame" src="https://www.youtube.com/embed/77ajoMZEwH0?si=no_pHCdCbCil43A6"></iframe>
             </div>
           </div>
         </div>

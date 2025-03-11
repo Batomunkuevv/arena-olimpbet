@@ -11,6 +11,7 @@ class Arena {
         this.initAccordions();
         this.initSliders();
         this.initPopups();
+        this.initSidebar();
     }
 
     initHeader() {
@@ -104,27 +105,16 @@ class Arena {
 
                 if (scrollTop > lastScrollTop && scrollTop > 100) {
                     header.classList.add('is-scrolling-down');
-                    upSidebar();
+
                 } else {
                     header.classList.remove('is-scrolling-down');
-                    downSidebar();
+
                 }
 
                 lastScrollTop = scrollTop;
             }
         }
 
-        function upSidebar() {
-            if (!pageSidebar || self.MAX_MEDIA_992.matches) return;
-
-            pageSidebar.style.top = '24px';
-        }
-
-        function downSidebar() {
-            if (!pageSidebar || self.MAX_MEDIA_992.matches) return;
-
-            pageSidebar.style = '';
-        }
     }
 
     initSliders() {
@@ -386,6 +376,52 @@ class Arena {
             });
             popupsContainer.classList.remove("popups--open");
             document.body.classList.remove("is-lock");
+        }
+    }
+
+    initSidebar() {
+        const sidebar = document.querySelector('[data-sticky-sidebar]');
+
+        if (!sidebar || this.MAX_MEDIA_992.matches) return;
+
+        let sidebarHeight = sidebar.offsetHeight;
+
+        if (sidebarHeight < window.innerHeight) return;
+
+        let lastScrollTop = document.documentElement.scrollTop === 0 ? 0 : document.documentElement.scrollTop;
+        let totalTop = 0;
+
+        const bottomGap = 24;
+        const header = document.querySelector('.site-header');
+        const headerHeight = header.offsetHeight;
+
+        window.addEventListener('scroll', handleWindowScroll);
+
+        function handleWindowScroll() {
+            const scrollTop = document.documentElement.scrollTop;
+            const scrollDistance = lastScrollTop - scrollTop;
+            const isScrollingDown = scrollDistance < 0;
+            const windowHeight = window.innerHeight;
+            sidebarHeight = sidebar.offsetHeight;
+            const maxTop = sidebarHeight - windowHeight + bottomGap;
+
+            if (isScrollingDown) {
+                totalTop += scrollDistance;
+
+                if (Math.abs(totalTop) > maxTop) {
+                    totalTop = -maxTop;
+                }
+            } else {
+                totalTop += scrollDistance;
+
+                if (totalTop > headerHeight + 24) {
+                    totalTop = headerHeight + 24;
+                }
+            }
+
+            sidebar.style.top = `${totalTop}px`;
+
+            lastScrollTop = scrollTop;
         }
     }
 }
