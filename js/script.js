@@ -101,7 +101,7 @@ class Arena {
             window.addEventListener('scroll', handleWindowScroll);
 
             function handleWindowScroll() {
-                const scrollTop = document.documentElement.scrollTop;
+                const scrollTop = window.scrollY;
 
                 if (scrollTop > lastScrollTop && scrollTop > 100) {
                     header.classList.add('is-scrolling-down');
@@ -167,6 +167,40 @@ class Arena {
                         navigation: {
                             prevEl: galleryPrev,
                             nextEl: galleryNext,
+                        }
+                    }
+
+                    break;
+                }
+                case 'authors': {
+                    const authorsPrev = slider.closest('.other-authors__slider').querySelector('.other-authors__arrow--prev');
+                    const authorsNext = slider.closest('.other-authors__slider').querySelector('.other-authors__arrow--next');
+
+                    options = {
+                        ...options,
+                        slidesPerView: 'auto',
+                        spaceBetween: 8,
+                        navigation: {
+                            prevEl: authorsPrev,
+                            nextEl: authorsNext,
+                        },
+                        breakpoints: {
+                            767: {
+                                slidesPerView: 3,
+                                spaceBetween: 24,
+                            },
+                            900: {
+                                slidesPerView: 4,
+                                spaceBetween: 24,
+                            },
+                            991: {
+                                slidesPerView: 3,
+                                spaceBetween: 24,
+                            },
+                            1200: {
+                                slidesPerView: 4,
+                                spaceBetween: 24,
+                            }
                         }
                     }
 
@@ -388,7 +422,7 @@ class Arena {
 
         if (sidebarHeight < window.innerHeight) return;
 
-        let lastScrollTop = document.documentElement.scrollTop === 0 ? 0 : document.documentElement.scrollTop;
+        let lastScrollTop = window.scrollY === 0 ? 0 : window.scrollY;
         let totalTop = 0;
 
         const bottomGap = 24;
@@ -398,7 +432,7 @@ class Arena {
         window.addEventListener('scroll', handleWindowScroll);
 
         function handleWindowScroll() {
-            const scrollTop = document.documentElement.scrollTop;
+            const scrollTop = window.scrollY;
             const scrollDistance = lastScrollTop - scrollTop;
             const isScrollingDown = scrollDistance < 0;
             const windowHeight = window.innerHeight;

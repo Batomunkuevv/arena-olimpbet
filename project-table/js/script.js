@@ -16,6 +16,10 @@ const fillTable = () => {
             name: 'Рубрика/тег',
             slug: 'category.html'
         },
+        {
+            name: 'Автор',
+            slug: 'author.html'
+        },
     ]
     const DOMAIN = window.location.href.includes('index.html') ? window.location.href.replace('index.html', '') : window.location.href;
     const projectTable = document.querySelector('.project-table');
