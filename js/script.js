@@ -11,7 +11,7 @@ class Arena {
         this.initAccordions();
         this.initSliders();
         this.initPopups();
-        this.initSidebar();
+        this.initStickySidebar();
     }
 
     initHeader() {
@@ -413,49 +413,49 @@ class Arena {
         }
     }
 
-    initSidebar() {
-        const sidebar = document.querySelector('[data-sticky-sidebar]');
+    initStickySidebar() {
+        const stickySidebar = document.querySelector('[data-sticky-sidebar]');
 
-        if (!sidebar || this.MAX_MEDIA_992.matches) return;
+        if (!stickySidebar || this.MAX_MEDIA_992.matches) return;
 
-        let sidebarHeight = sidebar.offsetHeight;
-
-        if (sidebarHeight < window.innerHeight) return;
-
-        let lastScrollTop = window.scrollY === 0 ? 0 : window.scrollY;
-        let totalTop = 0;
-
-        const bottomGap = 24;
         const header = document.querySelector('.site-header');
-        const headerHeight = header.offsetHeight;
+        const headerHeight = header?.offsetHeight || 0;
+        const stickySidebarBody = stickySidebar.querySelector('.site-page__sidebars-body');
+        const stickySidebarHeight = stickySidebarBody.scrollHeight;
+        const isSidebarHighWindow = window.innerHeight < stickySidebarHeight;
 
-        window.addEventListener('scroll', handleWindowScroll);
+        if (isSidebarHighWindow) {
+            initScrollable();
+        } else {
+            initSimple();
+        }
 
-        function handleWindowScroll() {
-            const scrollTop = window.scrollY;
-            const scrollDistance = lastScrollTop - scrollTop;
-            const isScrollingDown = scrollDistance < 0;
-            const windowHeight = window.innerHeight;
-            sidebarHeight = sidebar.offsetHeight;
-            const maxTop = sidebarHeight - windowHeight + bottomGap;
+        function initScrollable() {
+            const options = {
+                topSpacing: headerHeight + 24,
+                bottomSpacing: 24,
+                minWidth: 991,
+                innerWrapperSelector: '.site-page__sidebars-body',
+            }
+            const stickySidebarInstance = new StickySidebar(stickySidebar, options);
 
-            if (isScrollingDown) {
-                totalTop += scrollDistance;
+            setTimeout(() => {
+                stickySidebarInstance.updateSticky();
+            }, 0);
+        }
 
-                if (Math.abs(totalTop) > maxTop) {
-                    totalTop = -maxTop;
-                }
-            } else {
-                totalTop += scrollDistance;
+        function initSimple() {
+            stickySidebarBody.classList.add('site-page__sidebars-body--simple-sticky');
 
-                if (totalTop > headerHeight + 24) {
-                    totalTop = headerHeight + 24;
+            window.addEventListener('scroll', handleWindowScroll);
+
+            function handleWindowScroll() {
+                if (!header.classList.contains('is-scrolling-down')) {
+                    stickySidebarBody.style.top = headerHeight + 24 + "px";
+                } else {
+                    stickySidebarBody.style.top = '';
                 }
             }
-
-            sidebar.style.top = `${totalTop}px`;
-
-            lastScrollTop = scrollTop;
         }
     }
 }
