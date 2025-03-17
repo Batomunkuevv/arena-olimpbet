@@ -383,11 +383,17 @@ class Arena {
 
         popups.forEach((popup) => {
             const popupType = popup.dataset.popup;
-            const popupButton = document.querySelector(`[data-popup-open="${popupType}"]`);
+            const popupButtons = document.querySelectorAll(`[data-popup-open="${popupType}"]`);
             const popupContent = popup.querySelector('.popup__content');
 
-            if (popupButton) popupButton.addEventListener('click', handlePopupButton);
+            if (popupButtons) initPopupButtons();
             popup.addEventListener('click', handleClickOverlay);
+
+            function initPopupButtons() {
+                popupButtons.forEach(button => {
+                    button.addEventListener('click', handlePopupButton);
+                })
+            }
 
             function handlePopupButton() {
                 openPopup(popup)
