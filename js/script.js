@@ -12,6 +12,7 @@ class Arena {
         this.initSliders();
         this.initPopups();
         this.initStickySidebar();
+        this.initCookie();
     }
 
     initHeader() {
@@ -201,6 +202,31 @@ class Arena {
                                 slidesPerView: 4,
                                 spaceBetween: 24,
                             }
+                        }
+                    }
+
+                    break;
+                }
+                case 'articles-404': {
+                    const articles404Prev = slider.closest('.articles-404__slider').querySelector('.articles-404__arrow--prev');
+                    const articles404Next = slider.closest('.articles-404__slider').querySelector('.articles-404__arrow--next');
+
+                    options = {
+                        ...options,
+                        slidesPerView: 'auto',
+                        spaceBetween: 24,
+                        enabled: false,
+                        navigation: {
+                            prevEl: articles404Prev,
+                            nextEl: articles404Next,
+                        },
+                        breakpoints: {
+                            991: {
+                                loop: true,
+                                slidesPerView: 4,
+                                enabled: true
+                            },
+
                         }
                     }
 
@@ -411,6 +437,63 @@ class Arena {
             popupsContainer.classList.remove("popups--open");
             document.body.classList.remove("is-lock");
         }
+    }
+
+    initCookie() {
+        const cookiePopup = document.querySelector('.cookie');
+
+        if (!cookiePopup) return;
+
+        const isCookieAccepted = getCookie('cookie_accepted');
+
+        if (isCookieAccepted) return;
+
+        cookiePopup.classList.add('cookie--visible');
+
+        const cookiePopupButton = cookiePopup.querySelector('.cookie__button');
+
+        cookiePopupButton.addEventListener('click', handleCookieButtonClick);
+
+        function handleCookieButtonClick() {
+            const options = { "max-age": 24 * 60 * 60 }
+
+            setCookie('cookie_accepted', true, options);
+            cookiePopup.classList.remove('cookie--visible');
+        }
+
+        function setCookie(name, value, options = {}) {
+            options = {
+                path: '/',
+                Secure: true,
+                SameSite: 'Lax',
+                ...options
+            };
+
+            if (options.expires instanceof Date) {
+                options.expires = options.expires.toUTCString();
+            }
+
+            let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+
+            for (const [key, value] of Object.entries(options)) {
+                updatedCookie += "; " + key;
+
+                if (value !== true) {
+                    updatedCookie += "=" + value;
+                }
+            }
+
+            document.cookie = updatedCookie;
+        }
+
+        function getCookie(name) {
+            const matches = document.cookie.match(new RegExp(
+                "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+            ));
+
+            return matches ? decodeURIComponent(matches[1]) : undefined;
+        }
+
     }
 
     initStickySidebar() {

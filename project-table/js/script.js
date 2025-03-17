@@ -20,6 +20,10 @@ const fillTable = () => {
             name: 'Автор',
             slug: 'author.html'
         },
+        {
+            name: '404',
+            slug: '404.html'
+        },
     ]
     const DOMAIN = window.location.href.includes('index.html') ? window.location.href.replace('index.html', '') : window.location.href;
     const projectTable = document.querySelector('.project-table');
