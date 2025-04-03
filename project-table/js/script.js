@@ -17,6 +17,10 @@ const fillTable = () => {
             slug: 'category.html'
         },
         {
+            name: 'Все прогнозы',
+            slug: 'forecasts.html'
+        },
+        {
             name: 'Автор',
             slug: 'author.html'
         },
