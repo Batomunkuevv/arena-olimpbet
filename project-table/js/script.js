@@ -9,6 +9,10 @@ const fillTable = () => {
             slug: 'search.html'
         },
         {
+            name: 'Поиск по спорту',
+            slug: 'sport-entities-page.html'
+        },
+        {
             name: 'Статья',
             slug: 'article.html'
         },
