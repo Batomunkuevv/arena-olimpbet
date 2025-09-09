@@ -21,6 +21,8 @@
     "author": "Kirill Batomunkuev <i@batomunkuevv.ru>",
     "license": "ISC",
     "devDependencies": {
+        "@babel/preset-env": "^7.28.3",
+        "babel-loader": "^10.0.0",
         "browser-sync": "^2.27.7",
         "del": "^6.0.0",
         "fs": "^0.0.1-security",

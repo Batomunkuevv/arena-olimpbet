@@ -3,7 +3,39 @@ const fillTable = () => {
         {
             name: 'Главная',
             slug: 'homepage.html'
-        }
+        },
+        {
+            name: 'Поиск',
+            slug: 'search.html'
+        },
+        {
+            name: 'Поиск по спорту',
+            slug: 'sport-entities-page.html'
+        },
+        {
+            name: 'Статья',
+            slug: 'article.html'
+        },
+        {
+            name: 'Рубрика/тег',
+            slug: 'category.html'
+        },
+        {
+            name: 'Все прогнозы',
+            slug: 'forecasts.html'
+        },
+        {
+            name: 'Автор',
+            slug: 'author.html'
+        },
+        {
+            name: 'Видео',
+            slug: 'videos.html'
+        },
+        {
+            name: '404',
+            slug: '404.html'
+        },
     ]
     const DOMAIN = window.location.href.includes('index.html') ? window.location.href.replace('index.html', '') : window.location.href;
     const projectTable = document.querySelector('.project-table');

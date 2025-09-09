@@ -1,0 +1,82 @@
+@use "../base/globals" as *;
+
+.sport-entity {
+    &__link {
+        padding: 24px;
+        background: #fff;
+        border-radius: 8px;
+        display: flex;
+        align-items: start;
+        gap: 28px;
+        transition: all 0.3s ease-in-out 0s;
+
+        @media (max-width: 767px) {
+            padding: 16px;
+            gap: 16px;
+        }
+
+        &:hover {
+            box-shadow: $generalShadow;
+
+            & .sport-entity__title {
+                color: $generalHoverColor;
+            }
+        }
+    }
+
+    &__image {
+        width: 100%;
+        max-width: 127px;
+        flex: none;
+        border-radius: 50%;
+        overflow: hidden;
+
+        @media(max-width: 374px){
+            max-width: 100px;
+        }
+
+        &-ibg {
+            padding-top: 100%;
+        }
+    }
+
+    &__content {
+        margin-top: 12px;
+    }
+
+    &__title {
+        margin-bottom: 10px;
+        font-size: 24px;
+        line-height: toProcent(24, 28);
+        transition: all 0.3s ease-in-out 0s;
+    }
+
+    &__info {
+        margin-bottom: 6px;
+        font-size: 12px;
+        line-height: toProcent(12, 15);
+        color: rgba(0, 0, 0, 0.7);
+    }
+
+    &__list {
+        font-size: 12px;
+        line-height: toProcent(12, 15);
+
+        &-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+
+            &:not(:last-child) {
+                margin-bottom: 6px;
+            }
+
+            &-label {
+                color: rgba(0, 0, 0, 0.7);
+            }
+
+            &-value {
+            }
+        }
+    }
+}

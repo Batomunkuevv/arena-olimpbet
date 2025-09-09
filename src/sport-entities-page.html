@@ -1,0 +1,513 @@
+@@include('html/_head.html', { title: "Поиск (футбол)" })
+
+<body>
+    <div class="site-wrapper">
+        @@include('html/layout/_header.html',{})
+        <main class="site-page site-page--on-sport-entities">
+            <div class="container">
+                <div class="sport-entities-page">
+                    <nav class="sport-entities-page__breadcrumbs breadcrumbs" itemscope
+                        itemtype="https://schema.org/BreadcrumbList">
+                        <ol class="breadcrumbs__list">
+                            <li class="breadcrumbs__item" itemprop="itemListElement" itemscope
+                                itemtype="https://schema.org/ListItem">
+                                <meta itemprop="position" content="1" />
+                                <meta itemprop="name" content="Главная" />
+                                <a class="breadcrumbs__link" itemprop="item" href="/homepage.html">Главная</a>
+                            </li>
+                            <li class="breadcrumbs__item" itemprop="itemListElement" itemscope
+                                itemtype="https://schema.org/ListItem">
+                                <meta itemprop="position" content="2" />
+                                <meta itemprop="name" content="Про ставки" />
+                                <a class="breadcrumbs__link" itemprop="item" href="#">Про ставки</a>
+                            </li>
+                            <li class="breadcrumbs__item" itemprop="itemListElement" itemscope
+                                itemtype="https://schema.org/ListItem">
+                                <meta itemprop="position" content="3" />
+                                <meta itemprop="name" content="Ставки по трендам" />
+                                <span class="breadcrumbs__current"> Ставки по трендам </span>
+                            </li>
+                        </ol>
+                    </nav>
+                    <h1 class="sport-entities-page__title h4">Заголовок</h1>
+                    <div class="sport-entities-page__categories categories">
+                        <ul class="categories__list">
+                            <li class="categories__item">
+                                <div class="categories__link categories__link--current">все</div>
+                            </li>
+                            <li class="categories__item">
+                                <a href="#" class="categories__link">Игрок</a>
+                            </li>
+                            <li class="categories__item">
+                                <a href="#" class="categories__link">Клуб</a>
+                            </li>
+                            <li class="categories__item">
+                                <a href="#" class="categories__link">Тренер</a>
+                            </li>
+                            <li class="categories__item">
+                                <a href="#" class="categories__link">Функционер</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="site-page__body">
+                        <div class="site-page__content">
+                            <form action="#" class="sport-entities-page__search search">
+                                <div class="search__wrapper">
+                                    <input type="text" name="search" placeholder="Поиск"
+                                        class="search__input search__input--on-search input" />
+                                    <button type="reset" class="search__reset search__reset--on-search">
+                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.351472 0.351472C0.820101 -0.117157 1.5799 -0.117157 2.04853 0.351472L6 4.30294L9.95147 0.351472C10.4201 -0.117157 11.1799 -0.117157 11.6485 0.351472C12.1172 0.820101 12.1172 1.5799 11.6485 2.04853L7.69706 6L11.6485 9.95147C12.1172 10.4201 12.1172 11.1799 11.6485 11.6485C11.1799 12.1172 10.4201 12.1172 9.95147 11.6485L6 7.69706L2.04853 11.6485C1.5799 12.1172 0.820101 12.1172 0.351472 11.6485C-0.117157 11.1799 -0.117157 10.4201 0.351472 9.95147L4.30294 6L0.351472 2.04853C-0.117157 1.5799 -0.117157 0.820101 0.351472 0.351472Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="search__results search__results--full">
+                                    <div class="search__not-found">
+                                        <p class="search__not-found-title">Поиск не&nbsp;дал результатов</p>
+                                        <p class="search__not-found-text">Ничего не найдено по запросу <span>«псв
+                                                эндерховнн».</span> Попробуйте изменить запрос.</p>
+                                    </div>
+                                </div>
+                            </form>
+                            <ul class="sport-entities-page__alphabet alphabet-filter">
+                                <li class="alphabet-filter__item">
+                                    <button type="button" class="alphabet-filter__button">А</button>
+                                </li>
+                                <li class="alphabet-filter__item">
+                                    <button type="button" class="alphabet-filter__button">Б</button>
+                                </li>
+                                <li class="alphabet-filter__item">
+                                    <button type="button" class="alphabet-filter__button">В</button>
+                                </li>
+                                <li class="alphabet-filter__item">
+                                    <button type="button" class="alphabet-filter__button">Г</button>
+                                </li>
+                                <li class="alphabet-filter__item">
+                                    <button type="button" class="alphabet-filter__button">Д</button>
+                                </li>
+                                <li class="alphabet-filter__item">
+                                    <button type="button" class="alphabet-filter__button">Е</button>
+                                </li>
+                                <li class="alphabet-filter__item">
+                                    <button type="button" disabled class="alphabet-filter__button">Ё</button>
+                                </li>
+                                <li class="alphabet-filter__item">
+                                    <button type="button" class="alphabet-filter__button">Ж</button>
+                                </li>
+                                <li class="alphabet-filter__item">
+                                    <button type="button" class="alphabet-filter__button">З</button>
+                                </li>
+                                <li class="alphabet-filter__item">
+                                    <button type="button" class="alphabet-filter__button">И</button>
+                                </li>
+                                <li class="alphabet-filter__item">
+                                    <button type="button" disabled class="alphabet-filter__button">Й</button>
+                                </li>
+                                <li class="alphabet-filter__item">
+                                    <button type="button" class="alphabet-filter__button">К</button>
+                                </li>
+                                <li class="alphabet-filter__item">
+                                    <button type="button" class="alphabet-filter__button">Л</button>
+                                </li>
+                                <li class="alphabet-filter__item">
+                                    <button type="button" class="alphabet-filter__button">М</button>
+                                </li>
+                                <li class="alphabet-filter__item">
+                                    <button type="button" class="alphabet-filter__button">Н</button>
+                                </li>
+                                <li class="alphabet-filter__item">
+                                    <button type="button" class="alphabet-filter__button">О</button>
+                                </li>
+                                <li class="alphabet-filter__item">
+                                    <button type="button" class="alphabet-filter__button">П</button>
+                                </li>
+                                <li class="alphabet-filter__item">
+                                    <button type="button" class="alphabet-filter__button">Р</button>
+                                </li>
+                                <li class="alphabet-filter__item">
+                                    <button type="button" class="alphabet-filter__button">С</button>
+                                </li>
+                                <li class="alphabet-filter__item">
+                                    <button type="button" class="alphabet-filter__button">Т</button>
+                                </li>
+                                <li class="alphabet-filter__item">
+                                    <button type="button" class="alphabet-filter__button">У</button>
+                                </li>
+                                <li class="alphabet-filter__item">
+                                    <button type="button" class="alphabet-filter__button">Ф</button>
+                                </li>
+                                <li class="alphabet-filter__item">
+                                    <button type="button" class="alphabet-filter__button">Х</button>
+                                </li>
+                                <li class="alphabet-filter__item">
+                                    <button type="button" class="alphabet-filter__button">Ц</button>
+                                </li>
+                                <li class="alphabet-filter__item">
+                                    <button type="button" class="alphabet-filter__button">Ч</button>
+                                </li>
+                                <li class="alphabet-filter__item">
+                                    <button type="button" class="alphabet-filter__button">Ш</button>
+                                </li>
+                                <li class="alphabet-filter__item">
+                                    <button type="button" disabled class="alphabet-filter__button">Щ</button>
+                                </li>
+                                <li class="alphabet-filter__item">
+                                    <button type="button" disabled class="alphabet-filter__button">Ы</button>
+                                </li>
+                                <li class="alphabet-filter__item">
+                                    <button type="button" class="alphabet-filter__button">Э</button>
+                                </li>
+                                <li class="alphabet-filter__item">
+                                    <button type="button" class="alphabet-filter__button">Ю</button>
+                                </li>
+                                <li class="alphabet-filter__item">
+                                    <button type="button" class="alphabet-filter__button">Я</button>
+                                </li>
+                            </ul>
+                            <ul class="sport-entities-page__list sport-entities">
+                                <li class="sport-entities-page__item">
+                                    <article class="sport-entity">
+                                        <a href="#" class="sport-entity__link">
+                                            <div class="sport-entity__image">
+                                                <div class="sport-entity__image-ibg ibg">
+                                                    <picture>
+                                                        <source srcset="@img/sport-entities/01@2x.png"
+                                                            media="(min-resolution: 2dppx)">
+                                                        <img src="@img/sport-entities/01.png" alt="Image" title="Image">
+                                                    </picture>
+                                                </div>
+                                            </div>
+                                            <div class="sport-entity__content">
+                                                <h2 class="sport-entity__title h4">Юго́<br>Экитике́</h2>
+                                                <div class="sport-entity__info">Игрок</div>
+                                                <ul class="sport-entity__list">
+                                                    <li class="sport-entity__list-item">
+                                                        <span class="sport-entity__list-item-label">Гражданство:</span>
+                                                        <span class="sport-entity__list-item-value">Франция</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </a>
+                                    </article>
+                                </li>
+                                <li class="sport-entities-page__item">
+                                    <article class="sport-entity">
+                                        <a href="#" class="sport-entity__link">
+                                            <div class="sport-entity__image">
+                                                <div class="sport-entity__image-ibg ibg">
+                                                    <picture>
+                                                        <source srcset="@img/sport-entities/02@2x.png"
+                                                            media="(min-resolution: 2dppx)">
+                                                        <img src="@img/sport-entities/02.png" alt="Image" title="Image">
+                                                    </picture>
+                                                </div>
+                                            </div>
+                                            <div class="sport-entity__content">
+                                                <h2 class="sport-entity__title h4">Килиан<br>Мбаппе</h2>
+                                                <div class="sport-entity__info">Функционер</div>
+                                                <ul class="sport-entity__list">
+                                                    <li class="sport-entity__list-item">
+                                                        <span class="sport-entity__list-item-label">Гражданство:</span>
+                                                        <span class="sport-entity__list-item-value">Франция</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </a>
+                                    </article>
+                                </li>
+                                <li class="sport-entities-page__item">
+                                    <article class="sport-entity">
+                                        <a href="#" class="sport-entity__link">
+                                            <div class="sport-entity__image">
+                                                <div class="sport-entity__image-ibg ibg">
+                                                    <picture>
+                                                        <source srcset="@img/sport-entities/03@2x.png"
+                                                            media="(min-resolution: 2dppx)">
+                                                        <img src="@img/sport-entities/03.png" alt="Image" title="Image">
+                                                    </picture>
+                                                </div>
+                                            </div>
+                                            <div class="sport-entity__content">
+                                                <h2 class="sport-entity__title h4">Ламин<br>Ямаль</h2>
+                                                <ul class="sport-entity__list">
+                                                    <li class="sport-entity__list-item">
+                                                        <span class="sport-entity__list-item-label">Клуб: </span>
+                                                        <span class="sport-entity__list-item-value">Барселона</span>
+                                                    </li>
+                                                    <li class="sport-entity__list-item">
+                                                        <span class="sport-entity__list-item-label">Гражданство:</span>
+                                                        <span class="sport-entity__list-item-value">Испания</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </a>
+                                    </article>
+                                </li>
+                                <li class="sport-entities-page__item">
+                                    <article class="sport-entity">
+                                        <a href="#" class="sport-entity__link">
+                                            <div class="sport-entity__image">
+                                                <div class="sport-entity__image-ibg ibg">
+                                                    <picture>
+                                                        <source srcset="@img/sport-entities/04@2x.png"
+                                                            media="(min-resolution: 4dppx)">
+                                                        <img src="@img/sport-entities/04.png" alt="Image" title="Image">
+                                                    </picture>
+                                                </div>
+                                            </div>
+                                            <div class="sport-entity__content">
+                                                <h2 class="sport-entity__title h4">Манчестер<br>Сити</h2>
+                                                <div class="sport-entity__info">Футзальный клуб</div>
+                                                <ul class="sport-entity__list">
+                                                    <li class="sport-entity__list-item">
+                                                        <span class="sport-entity__list-item-label">Город:</span>
+                                                        <span class="sport-entity__list-item-value">Семей</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </a>
+                                    </article>
+                                </li>
+                                <li class="sport-entities-page__item">
+                                    <article class="sport-entity">
+                                        <a href="#" class="sport-entity__link">
+                                            <div class="sport-entity__image">
+                                                <div class="sport-entity__image-ibg ibg">
+                                                    <picture>
+                                                        <source srcset="@img/sport-entities/05@2x.png"
+                                                            media="(min-resolution: 2dppx)">
+                                                        <img src="@img/sport-entities/05.png" alt="Image" title="Image">
+                                                    </picture>
+                                                </div>
+                                            </div>
+                                            <div class="sport-entity__content">
+                                                <h2 class="sport-entity__title h4">Эрлинг<br>Холанд</h2>
+                                                <ul class="sport-entity__list">
+                                                    <li class="sport-entity__list-item">
+                                                        <span class="sport-entity__list-item-label">Клуб:</span>
+                                                        <span class="sport-entity__list-item-value">Манчестер
+                                                            Сити</span>
+                                                    </li>
+                                                    <li class="sport-entity__list-item">
+                                                        <span class="sport-entity__list-item-label">Гражданство: </span>
+                                                        <span class="sport-entity__list-item-value">Норвегия</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </a>
+                                    </article>
+                                </li>
+                            </ul>
+                            <nav class="sport-entities-page__pagination pagination">
+                                <a href="#" class="pagination__arrow arrow">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M10.2071 12.7071C10.5976 12.3166 10.5976 11.6834 10.2071 11.2929L6.91421 8L10.2071 4.70711C10.5976 4.31658 10.5976 3.68342 10.2071 3.29289C9.81658 2.90237 9.18342 2.90237 8.79289 3.29289L4.79289 7.29289C4.40237 7.68342 4.40237 8.31658 4.79289 8.70711L8.79289 12.7071C9.18342 13.0976 9.81658 13.0976 10.2071 12.7071Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                </a>
+                                <ul class="pagination__list">
+                                    <li class="pagination__item">
+                                        <a href="#" class="pagination__link"> 1 </a>
+                                    </li>
+                                    <li class="pagination__item">
+                                        <a href="#" class="pagination__link"> 2 </a>
+                                    </li>
+                                    <li class="pagination__item">
+                                        <a href="#" class="pagination__link"> 3 </a>
+                                    </li>
+                                    <li class="pagination__item">
+                                        <a href="#" class="pagination__link"> 4 </a>
+                                    </li>
+                                    <li class="pagination__item">
+                                        <div class="pagination__current">5</div>
+                                    </li>
+                                    <li class="pagination__item">
+                                        <div class="pagination__link">...</div>
+                                    </li>
+                                    <li class="pagination__item">
+                                        <a href="#" class="pagination__link"> 85 </a>
+                                    </li>
+                                </ul>
+                                <a href="#" class="pagination__arrow arrow">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M5.79289 12.7071C5.40237 12.3166 5.40237 11.6834 5.79289 11.2929L9.08579 8L5.79289 4.70711C5.40237 4.31658 5.40237 3.68342 5.79289 3.29289C6.18342 2.90237 6.81658 2.90237 7.20711 3.29289L11.2071 7.29289C11.5976 7.68342 11.5976 8.31658 11.2071 8.70711L7.20711 12.7071C6.81658 13.0976 6.18342 13.0976 5.79289 12.7071Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                </a>
+                            </nav>
+                        </div>
+                        <div data-sticky-sidebar class="site-page__sidebars site-page__sidebars--desktop">
+                            <div class="site-page__sidebars-body">
+                                <aside class="top-events-sidebar sidebar">
+                                    <h3 class="top-events-sidebar__title sidebar__title">Топ события</h3>
+                                    <ul class="top-events-sidebar__list">
+                                        <li class="top-events-sidebar__item">
+                                            <div class="top-events-sidebar__item-clash clash">
+                                                <div class="clash__side">
+                                                    <img src="images/logos/01.png" alt="01" title="01" />
+                                                </div>
+                                                <div class="clash__info">
+                                                    <p class="clash__name">Лига Чемпионов</p>
+                                                    <p class="clash__timestamp">25.10 00:45</p>
+                                                </div>
+                                                <div class="clash__side">
+                                                    <img src="images/logos/02.png" alt="02" title="02" />
+                                                </div>
+                                            </div>
+                                            <ul class="top-events-sidebar__item-coefficents coefficents">
+                                                <li class="coefficents__item">
+                                                    <button type="button" class="coefficents__button">
+                                                        <div class="coefficents__exodus">П1</div>
+                                                        <div class="coefficents__value">1.85</div>
+                                                    </button>
+                                                </li>
+                                                <li class="coefficents__item">
+                                                    <button type="button" class="coefficents__button">
+                                                        <div class="coefficents__exodus">X</div>
+                                                        <div class="coefficents__value">1.83</div>
+                                                    </button>
+                                                </li>
+                                                <li class="coefficents__item">
+                                                    <button type="button" class="coefficents__button">
+                                                        <div class="coefficents__exodus">П2</div>
+                                                        <div class="coefficents__value">2.96</div>
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="top-events-sidebar__item">
+                                            <div class="top-events-sidebar__item-clash clash">
+                                                <div class="clash__side clash__side--country">
+                                                    <img src="images/countries/spain.png" alt="Spain" title="Spain" />
+                                                </div>
+                                                <div class="clash__info">
+                                                    <p class="clash__name">Лига наций</p>
+                                                    <p class="clash__timestamp">20.11 00:45</p>
+                                                </div>
+                                                <div class="clash__side clash__side--country">
+                                                    <img src="images/countries/ireland.png" alt="Ireland"
+                                                        title="Ireland" />
+                                                </div>
+                                            </div>
+                                            <ul class="top-events-sidebar__item-coefficents coefficents">
+                                                <li class="coefficents__item">
+                                                    <button type="button" class="coefficents__button">
+                                                        <div class="coefficents__exodus">П1</div>
+                                                        <div class="coefficents__value">1.85</div>
+                                                    </button>
+                                                </li>
+                                                <li class="coefficents__item">
+                                                    <button type="button" class="coefficents__button">
+                                                        <div class="coefficents__exodus">X</div>
+                                                        <div class="coefficents__value">1.83</div>
+                                                    </button>
+                                                </li>
+                                                <li class="coefficents__item">
+                                                    <button type="button" class="coefficents__button">
+                                                        <div class="coefficents__exodus">П2</div>
+                                                        <div class="coefficents__value">2.96</div>
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="top-events-sidebar__item">
+                                            <div class="top-events-sidebar__item-clash clash">
+                                                <div class="clash__side clash__side--people">
+                                                    <img src="images/peoples/01.png" alt="Fighter" title="Fighter" />
+                                                </div>
+                                                <div class="clash__info">
+                                                    <p class="clash__name">UFC</p>
+                                                    <p class="clash__timestamp">26.11 00:45</p>
+                                                </div>
+                                                <div class="clash__side clash__side--people">
+                                                    <img src="images/peoples/02.png" alt="Fighter" title="Fighter" />
+                                                </div>
+                                            </div>
+                                            <ul class="top-events-sidebar__item-coefficents coefficents">
+                                                <li class="coefficents__item">
+                                                    <button type="button" class="coefficents__button">
+                                                        <div class="coefficents__exodus">П1</div>
+                                                        <div class="coefficents__value">1.85</div>
+                                                    </button>
+                                                </li>
+                                                <li class="coefficents__item">
+                                                    <button type="button" class="coefficents__button">
+                                                        <div class="coefficents__exodus">П2</div>
+                                                        <div class="coefficents__value">2.96</div>
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <a href="#" class="sidebar__button button">все коэффициенты</a>
+                                </aside>
+                                <aside class="bonuses-sidebar sidebar">
+                                    <h3 class="bonuses-sidebar__title sidebar__title">Бонусы Olimpbet</h3>
+                                    <ul class="bonuses-sidebar__list">
+                                        <li class="bonuses-sidebar__item">
+                                            <div class="bonuses-sidebar__item-body">
+                                                <div class="bonuses-sidebar__item-icon">
+                                                    <img src="images/icons/bonuses/tenge.svg" alt="Tenge icon"
+                                                        title="Tenge icon" />
+                                                </div>
+                                                <div class="bonuses-sidebar__item-content">
+                                                    <p class="bonuses-sidebar__item-title">СӘЛЕМ БОНУС</p>
+                                                    <p class="bonuses-sidebar__item-text">Зарегистрируйся и&nbsp;получи
+                                                        1&nbsp;000 тенге гарантировано</p>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="bonuses-sidebar__item-button button">Получить</a>
+                                        </li>
+                                        <li class="bonuses-sidebar__item">
+                                            <div class="bonuses-sidebar__item-body">
+                                                <div class="bonuses-sidebar__item-icon">
+                                                    <img src="images/icons/bonuses/telegram.svg" alt="Telegram icon"
+                                                        title="Telegram icon" />
+                                                </div>
+                                                <div class="bonuses-sidebar__item-content">
+                                                    <p class="bonuses-sidebar__item-title">Фрибет за&nbsp;подписку</p>
+                                                    <p class="bonuses-sidebar__item-text">Разыгрываем 100&nbsp;000
+                                                        фрибетами за&nbsp;подписку</p>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="bonuses-sidebar__item-button button">Получить</a>
+                                        </li>
+                                        <li class="bonuses-sidebar__item">
+                                            <div class="bonuses-sidebar__item-body">
+                                                <div class="bonuses-sidebar__item-icon">
+                                                    <img src="images/icons/bonuses/bonus.svg" alt="Bonus icon"
+                                                        title="Bonus icon" />
+                                                </div>
+                                                <div class="bonuses-sidebar__item-content">
+                                                    <p class="bonuses-sidebar__item-title">бонусный клуб</p>
+                                                    <p class="bonuses-sidebar__item-text">Делайте ставки
+                                                        и&nbsp;получайте гарантированные призы</p>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="bonuses-sidebar__item-button button">Вступить</a>
+                                        </li>
+                                    </ul>
+                                </aside>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        @@include('html/layout/_footer.html',{})
+        @@include('html/components/_cookie.html',{})
+    </div>
+    <script defer src="js/sticky-sidebar.min.js"></script>
+    <script defer src="js/swiper-bundle.min.js"></script>
+    <script defer src="js/script.min.js"></script>
+</body>
+
+</html>

@@ -16,7 +16,8 @@ export const path = {
         projectTable: `${buildFolder}/project-table/`
     },
     src: {
-        js: `${srcFolder}/js/*.js`,
+        js: `${srcFolder}/js/script.js`,
+        jsLibs: `${srcFolder}/js/libs/**/*.*`,
         images: `${srcFolder}/images/**/*.{jpg,jpeg,png,gif,webp}`,
         svg: `${srcFolder}/images/**/*.svg`,
         css: `${srcFolder}/css/*.css`,

@@ -1,0 +1,50 @@
+.sport-entities-page {
+    &__breadcrumbs {
+        margin-bottom: 24px;
+
+        @media (max-width: 767px) {
+            margin-bottom: 16px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 24px;
+    }
+
+    &__categories {
+        margin-bottom: 24px;
+
+        @media (max-width: 767px) {
+            margin-bottom: 16px;
+        }
+    }
+
+    &__search {
+        margin-bottom: 24px;
+
+        @media (max-width: 767px) {
+            margin-bottom: 16px;
+        }
+    }
+
+    &__alphabet {
+        margin-bottom: 24px;
+    }
+
+    &__list {
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: 24px;
+
+            @media (max-width: 767px) {
+                margin-bottom: 16px;
+            }
+        }
+    }
+
+    &__pagination {
+        margin-top: 32px;
+    }
+}
