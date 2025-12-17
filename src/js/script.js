@@ -1,9 +1,25 @@
-class Arena {
-    MAX_MEDIA_992 = window.matchMedia('(max-width: 991px)');
+class Gallery {
+    constructor(root) {
+        this.root = root;
+        this.options = {
+            selector: '[data-gallery-item]',
+            plugins: [lgThumbnail],
+            thumbnail: true,
+            zoom: true,
+            download: true,
+            speed: 500,
+        }
 
-    constructor() {
         this.init();
     }
+
+    init() {
+        lightGallery(this.root, this.options);
+    }
+}
+
+class Arena {
+    MAX_MEDIA_992 = window.matchMedia('(max-width: 991px)');
 
     init() {
         this.initHeader();
@@ -14,6 +30,7 @@ class Arena {
         this.initStickySidebar();
         this.initCookie();
         this.initSearches();
+        this.initGalleries();
     }
 
     initSearches() {
@@ -185,6 +202,40 @@ class Arena {
                 case 'authors': {
                     const authorsPrev = slider.closest('.other-authors__slider').querySelector('.other-authors__arrow--prev');
                     const authorsNext = slider.closest('.other-authors__slider').querySelector('.other-authors__arrow--next');
+
+                    options = {
+                        ...options,
+                        slidesPerView: 'auto',
+                        spaceBetween: 8,
+                        navigation: {
+                            prevEl: authorsPrev,
+                            nextEl: authorsNext,
+                        },
+                        breakpoints: {
+                            767: {
+                                slidesPerView: 3,
+                                spaceBetween: 24,
+                            },
+                            900: {
+                                slidesPerView: 4,
+                                spaceBetween: 24,
+                            },
+                            991: {
+                                slidesPerView: 3,
+                                spaceBetween: 24,
+                            },
+                            1200: {
+                                slidesPerView: 4,
+                                spaceBetween: 24,
+                            }
+                        }
+                    }
+
+                    break;
+                }
+                case 'recommended-players': {
+                    const authorsPrev = slider.closest('.recommended-players__slider').querySelector('.recommended-players__arrow--prev');
+                    const authorsNext = slider.closest('.recommended-players__slider').querySelector('.recommended-players__arrow--next');
 
                     options = {
                         ...options,
@@ -556,6 +607,18 @@ class Arena {
             }
         }
     }
+
+    initGalleries() {
+        const galleries = document.querySelectorAll('[data-gallery]');
+
+        if (!galleries.length || typeof window.lightGallery !== 'function') return;
+
+        galleries.forEach(gallery => new Gallery(gallery));
+    }
 }
 
-window.addEventListener('DOMContentLoaded', new Arena());
+window.addEventListener('DOMContentLoaded', () => {
+    const app = new Arena();
+
+    app.init();
+});

@@ -1,0 +1,40 @@
+@use "../base/globals" as *;
+
+.button-more {
+    margin: 0 auto;
+    background: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 11px;
+    line-height: toProcent(11, 12);
+    font-weight: 700;
+    color: $generalTextTertiary;
+    text-transform: uppercase;
+    transition: color 0.3s ease-in-out 0s;
+
+    &:hover {
+        color: #000;
+
+        & .button-more__icon {
+            color: #000;
+        }
+    }
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 16px;
+        height: 16px;
+        flex: none;
+        color: #c4c9d4;
+        transition: color 0.3s ease-in-out 0s;
+
+        & svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

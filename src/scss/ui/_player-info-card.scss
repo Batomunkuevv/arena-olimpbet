@@ -1,0 +1,147 @@
+@use "../base/globals" as *;
+
+.player-info-card {
+    padding: 24px;
+    margin: 24px 0;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 46px;
+    background: $grayCardBg;
+    border-radius: 8px;
+
+    @media (max-width: 1200px) {
+        gap: 32px;
+    }
+
+    @media (max-width: 767px) {
+        margin: 16px -16px;
+        border-radius: 0;
+        flex-direction: column-reverse;
+        justify-content: start;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+    }
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &__content {
+    }
+
+    &__name {
+        margin-bottom: 8px;
+        font-size: 32px;
+        line-height: toProcent(32, 56);
+
+        @media (max-width: 767px) {
+            margin-bottom: 15px;
+            font-size: 24px;
+            line-height: 100%;
+        }
+    }
+
+    &__description {
+        margin-bottom: 20px;
+        max-width: 310px;
+        color: $generalTextGray;
+
+        @media (max-width: 767px) {
+            line-height: toProcent(16, 19);
+        }
+
+        @media (max-width: 479px) {
+            margin-bottom: 16px;
+            max-width: 243px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    &__list {
+        margin-bottom: 12px;
+
+        @media (max-width: 767px) {
+            margin-bottom: 15px;
+        }
+
+        &-item {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            column-gap: 8px;
+            row-gap: 4px;
+            line-height: toProcent(16, 19);
+
+            @media (max-width: 767px) {
+                justify-content: center;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 12px;
+
+                @media (max-width: 767px) {
+                    margin-bottom: 15px;
+                }
+            }
+
+            &-label {
+                color: $generalTextGray;
+            }
+
+            &-value {
+            }
+        }
+    }
+
+    &__socials {
+        &-title {
+            margin-bottom: 12px;
+            line-height: toProcent(16, 19);
+
+            @media (max-width: 767px) {
+                margin-bottom: 15px;
+            }
+        }
+
+        &-list {
+            @media (max-width: 767px) {
+                justify-content: center;
+            }
+        }
+    }
+
+    &__image {
+        margin-top: 14px;
+        min-width: 240px;
+        max-width: 292px;
+        flex: 1;
+        border-radius: 50%;
+        overflow: hidden;
+
+        @media (max-width: 1200px) {
+            min-width: 200px;
+        }
+
+        @media (max-width: 767px) {
+            margin-top: 0;
+            width: 100%;
+            max-width: 200px;
+            min-width: unset;
+        }
+
+        @media (max-width: 479px) {
+            max-width: 150px;
+        }
+
+        &-ibg {
+            padding-top: 100%;
+        }
+    }
+}

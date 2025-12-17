@@ -1,4 +1,12 @@
 @font-face {
+    font-family: lg;
+    font-display: swap;
+    src: url("../fonts/lg.woff2") format("woff2"), url("../fonts/lg.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
     font-family: Inter;
     font-display: swap;
     src: url("../fonts/Inter-Regular.woff2") format("woff2"), url("../fonts/Inter-Regular.woff") format("woff");
@@ -25,7 +33,8 @@
 @font-face {
     font-family: Inter;
     font-display: swap;
-    src: url("../fonts/Inter-MediumItalic.woff2") format("woff2"), url("../fonts/Inter-MediumItalic.woff") format("woff");
+    src: url("../fonts/Inter-MediumItalic.woff2") format("woff2"),
+        url("../fonts/Inter-MediumItalic.woff") format("woff");
     font-weight: 500;
     font-style: italic;
 }
@@ -41,7 +50,8 @@
 @font-face {
     font-family: Inter;
     font-display: swap;
-    src: url("../fonts/Inter-SemiBoldItalic.woff2") format("woff2"), url("../fonts/Inter-SemiBoldItalic.woff") format("woff");
+    src: url("../fonts/Inter-SemiBoldItalic.woff2") format("woff2"),
+        url("../fonts/Inter-SemiBoldItalic.woff") format("woff");
     font-weight: 600;
     font-style: italic;
 }
