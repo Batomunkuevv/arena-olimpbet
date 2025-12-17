@@ -13,6 +13,11 @@ class Gallery {
             zoom: true,
             download: true,
             speed: 500,
+            mobileSettings: {
+                controls: true,
+                showCloseIcon: true,
+                download: true,
+            }
         }
 
         this.init();
