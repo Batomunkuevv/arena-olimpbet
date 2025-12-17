@@ -1,7 +1,7 @@
 @use "../base/globals" as *;
 
 .gallery {
-    margin: 22px 0;
+    margin: 32px 0;
 
     &:last-child {
         margin-bottom: 0;
@@ -30,8 +30,13 @@
         }
 
         @media (max-width: 767px) {
-            grid-template-columns: repeat(auto-fit, minmax(311px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 16px;
+        }
+
+        @media (max-width: 479px) {
+            display: flex;
+            flex-direction: column;
         }
     }
 
@@ -39,6 +44,18 @@
         padding: 8px 6px 3px 8px;
         border: 1px solid rgba(108, 121, 147, 0.2);
         border-radius: 6px;
+
+        @media (min-width: 479px) {
+            &:not(.gallery__item--visible):nth-child(n + 7) {
+                display: none;
+            }
+        }
+
+        @media (max-width: 479px) {
+            &:not(.gallery__item--visible):nth-child(n + 4) {
+                display: none;
+            }
+        }
 
         &-image {
             margin-bottom: 2px;

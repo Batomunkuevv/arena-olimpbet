@@ -1,6 +1,11 @@
 class Gallery {
     constructor(root) {
         this.root = root;
+        this.gallerySection = this.root.closest('.gallery');
+        this.itemElements = this.root.querySelectorAll('.gallery__item');
+        this.moreButtonElement = this.gallerySection.querySelector('.button-more');
+        this.showedItems = this.getShowedItems();
+        this.showBy = 3;
         this.options = {
             selector: '[data-gallery-item]',
             plugins: [lgThumbnail],
@@ -13,13 +18,45 @@ class Gallery {
         this.init();
     }
 
+    getShowedItems() {
+        if (Arena.MAX_MEDIA_479.matches) return 3;
+
+        return 6;
+    }
+
     init() {
         lightGallery(this.root, this.options);
+        this.bindEvents();
+    }
+
+    bindEvents() {
+        this.moreButtonElement?.addEventListener('click', () => this.handleMore());
+        window.addEventListener('resize', () => this.handleWindowResize());
+    }
+
+    handleMore() {
+        this.showedItems += this.showBy;
+
+        const showingItems = [...this.itemElements].slice(0, this.showedItems);
+
+        if (!showingItems.length) return;
+
+        showingItems.forEach(item => item.classList.add('gallery__item--visible'));
+
+        if (this.showedItems >= this.itemElements.length) {
+            this.moreButtonElement.remove();
+        }
+    }
+
+    handleWindowResize() {
+        this.showedItems = this.getShowedItems();
     }
 }
 
 class Arena {
-    MAX_MEDIA_992 = window.matchMedia('(max-width: 991px)');
+    static MAX_MEDIA_1200 = window.matchMedia('(max-width: 1200px)');
+    static MAX_MEDIA_992 = window.matchMedia('(max-width: 991px)');
+    static MAX_MEDIA_479 = window.matchMedia('(max-width: 479px)');
 
     init() {
         this.initHeader();
@@ -565,7 +602,7 @@ class Arena {
     initStickySidebar() {
         const stickySidebar = document.querySelector('[data-sticky-sidebar]');
 
-        if (!stickySidebar || this.MAX_MEDIA_992.matches) return;
+        if (!stickySidebar || Arena.MAX_MEDIA_992.matches) return;
 
         const header = document.querySelector('.site-header');
         const headerHeight = header?.offsetHeight || 0;
