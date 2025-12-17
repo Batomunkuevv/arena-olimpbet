@@ -8,11 +8,7 @@
     }
 
     &__title {
-        margin-bottom: 9px;
-
-        @media (max-width: 767px) {
-            margin-bottom: 15px;
-        }
+        margin-bottom: 16px;
     }
 
     &__body {
