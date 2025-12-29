@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use "variables" as *;
 
 @mixin has-scrollbar() {
@@ -26,4 +27,37 @@
 
 @mixin ibg-padding($width, $height) {
     padding-top: calc($height / $width) * 100%;
+}
+
+@mixin min($key) {
+    $bp: map.get($breakpoints, $key);
+
+    @if $bp == null {
+        @error "Breakpoint '#{$key}' not found";
+    }
+
+    @media (min-width: #{$bp}px) {
+        @content;
+    }
+}
+
+@mixin max($key) {
+    $bp: map.get($breakpoints, $key);
+
+    @if $bp == null {
+        @error "Breakpoint '#{$key}' not found";
+    }
+
+    @media (max-width: #{$bp}px) {
+        @content;
+    }
+}
+
+@mixin between($from, $to) {
+    $bp-from: map.get($breakpoints, $from);
+    $bp-to: map.get($breakpoints, $to);
+
+    @media (min-width: #{$bp-from}px) and (max-width: #{$bp-to}px) {
+        @content;
+    }
 }

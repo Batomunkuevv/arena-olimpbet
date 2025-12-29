@@ -11,9 +11,20 @@ $generalButtonText: #1f5214;
 
 $generalPageBg: #eaecf0;
 $generalColor: #70d65c;
+$generalRed: #e4002b;
 $generalHoverColor: #067d18;
 $generalButtonHoverColor: #4dcc33;
 
 $generalShadow: 0 0 16px 8px rgba(0, 0, 0, 0.05);
 
 $grayCardBg: rgba(108, 121, 147, 0.1);
+
+$breakpoints: (
+    2xl: 1919,
+    xl: 1439,
+    lg: 1279,
+    md: 991,
+    sm: 767,
+    xs: 479,
+    xxs: 374,
+);

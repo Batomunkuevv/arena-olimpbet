@@ -8,6 +8,7 @@
 
 //?==============<Ui>==============
 
+@use "./ui/button";
 @use "./ui/button-more";
 @use "./ui/socials";
 @use "./ui/author-card";
@@ -17,6 +18,7 @@
 //?==============</Ui>=============
 
 @use "./components/alphabet-filter";
+@use "./components/bonus-offers";
 
 //*</Components>=================================================================================================
 
