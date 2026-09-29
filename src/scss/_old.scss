@@ -2010,9 +2010,10 @@ img {
     line-height: 111%;
     font-weight: 700;
 }
-.sidebar__button {
+.sidebar__button.button {
     margin-top: 16px;
-    max-width: unset;
+    width: 100%;
+    max-width: none;
     height: 35px;
 }
 .button-seo {
@@ -4384,9 +4385,10 @@ img {
     line-height: 143%;
     font-weight: 700;
 }
-.bonuses-sidebar__item-button {
+.bonuses-sidebar__item-button.button {
+    width: 100%;
+    max-width: none;
     height: 35px;
-    max-width: unset;
 }
 .banners-slider {
     margin: 24px 0;

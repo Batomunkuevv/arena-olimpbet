@@ -1,8 +1,8 @@
-@@include('html/_head.html', { title: "Поиск (футбол)" })
+@@include('html/_head.html', { "title": "Поиск (футбол)" })
 
 <body>
     <div class="site-wrapper">
-        @@include('html/layout/_header.html',{})
+        @@include('html/layout/_header.html')
         <main class="site-page site-page--on-sport-entities">
             <div class="container">
                 <div class="sport-entities-page">
@@ -174,9 +174,9 @@
                                             <div class="sport-entity__image">
                                                 <div class="sport-entity__image-ibg ibg">
                                                     <picture>
-                                                        <source srcset="@img/sport-entities/01@2x.png"
+                                                        <source srcset="images/sport-entities/01@2x.png"
                                                             media="(min-resolution: 2dppx)">
-                                                        <img src="@img/sport-entities/01.png" alt="Image" title="Image">
+                                                        <img src="images/sport-entities/01.png" alt="Image" title="Image">
                                                     </picture>
                                                 </div>
                                             </div>
@@ -199,9 +199,9 @@
                                             <div class="sport-entity__image">
                                                 <div class="sport-entity__image-ibg ibg">
                                                     <picture>
-                                                        <source srcset="@img/sport-entities/02@2x.png"
+                                                        <source srcset="images/sport-entities/02@2x.png"
                                                             media="(min-resolution: 2dppx)">
-                                                        <img src="@img/sport-entities/02.png" alt="Image" title="Image">
+                                                        <img src="images/sport-entities/02.png" alt="Image" title="Image">
                                                     </picture>
                                                 </div>
                                             </div>
@@ -224,9 +224,9 @@
                                             <div class="sport-entity__image">
                                                 <div class="sport-entity__image-ibg ibg">
                                                     <picture>
-                                                        <source srcset="@img/sport-entities/03@2x.png"
+                                                        <source srcset="images/sport-entities/03@2x.png"
                                                             media="(min-resolution: 2dppx)">
-                                                        <img src="@img/sport-entities/03.png" alt="Image" title="Image">
+                                                        <img src="images/sport-entities/03.png" alt="Image" title="Image">
                                                     </picture>
                                                 </div>
                                             </div>
@@ -252,9 +252,9 @@
                                             <div class="sport-entity__image">
                                                 <div class="sport-entity__image-ibg ibg">
                                                     <picture>
-                                                        <source srcset="@img/sport-entities/04@2x.png"
+                                                        <source srcset="images/sport-entities/04@2x.png"
                                                             media="(min-resolution: 4dppx)">
-                                                        <img src="@img/sport-entities/04.png" alt="Image" title="Image">
+                                                        <img src="images/sport-entities/04.png" alt="Image" title="Image">
                                                     </picture>
                                                 </div>
                                             </div>
@@ -277,9 +277,9 @@
                                             <div class="sport-entity__image">
                                                 <div class="sport-entity__image-ibg ibg">
                                                     <picture>
-                                                        <source srcset="@img/sport-entities/05@2x.png"
+                                                        <source srcset="images/sport-entities/05@2x.png"
                                                             media="(min-resolution: 2dppx)">
-                                                        <img src="@img/sport-entities/05.png" alt="Image" title="Image">
+                                                        <img src="images/sport-entities/05.png" alt="Image" title="Image">
                                                     </picture>
                                                 </div>
                                             </div>
@@ -502,12 +502,12 @@
                 </div>
             </div>
         </main>
-        @@include('html/layout/_footer.html',{})
-        @@include('html/components/_cookie.html',{})
+        @@include('html/layout/_footer.html')
+        @@include('html/components/_cookie.html')
     </div>
     <script defer src="js/sticky-sidebar.min.js"></script>
     <script defer src="js/swiper-bundle.min.js"></script>
-    <script defer src="js/script.min.js"></script>
+    <script type="module" src="js/script.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,85 @@
+@@include('html/_head.html', { "title": "Все авторы" })
+
+<body>
+    <div class="site-wrapper">
+        @@include('html/layout/_header.html')
+        <main class="site-page">
+            <div class="container">
+                <div class="authors-page">
+                    <nav class="authors-page__breadcrumbs breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+                        <ol class="breadcrumbs__list">
+                            <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                                <meta itemprop="position" content="1" />
+                                <meta itemprop="name" content="Главная" />
+                                <a class="breadcrumbs__link" itemprop="item" href="/homepage.html">Главная</a>
+                            </li>
+                            <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                                <meta itemprop="position" content="2" />
+                                <meta itemprop="name" content="Все авторы" />
+                                <span class="breadcrumbs__current">Все авторы</span>
+                            </li>
+                        </ol>
+                    </nav>
+                    <div class="site-page__body">
+                        <div class="site-page__content">
+                            <h1 class="authors-page__title h1">Все авторы</h1>
+                            <ul class="authors-page__list">
+                                @@loop('html/components/_author-card.html', 'data/authors.json')
+                            </ul>
+                            <nav class="authors-page__pagination pagination">
+                                <a href="#" class="pagination__arrow arrow">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.2071 12.7071C10.5976 12.3166 10.5976 11.6834 10.2071 11.2929L6.91421 8L10.2071 4.70711C10.5976 4.31658 10.5976 3.68342 10.2071 3.29289C9.81658 2.90237 9.18342 2.90237 8.79289 3.29289L4.79289 7.29289C4.40237 7.68342 4.40237 8.31658 4.79289 8.70711L8.79289 12.7071C9.18342 13.0976 9.81658 13.0976 10.2071 12.7071Z" fill="currentColor" />
+                                    </svg>
+                                </a>
+                                <ul class="pagination__list">
+                                    <li class="pagination__item">
+                                        <a href="#" class="pagination__link">1</a>
+                                    </li>
+                                    <li class="pagination__item">
+                                        <a href="#" class="pagination__link">2</a>
+                                    </li>
+                                    <li class="pagination__item">
+                                        <a href="#" class="pagination__link">3</a>
+                                    </li>
+                                    <li class="pagination__item">
+                                        <a href="#" class="pagination__link">4</a>
+                                    </li>
+                                    <li class="pagination__item">
+                                        <div class="pagination__current">5</div>
+                                    </li>
+                                    <li class="pagination__item">
+                                        <div class="pagination__link">...</div>
+                                    </li>
+                                    <li class="pagination__item">
+                                        <a href="#" class="pagination__link">85</a>
+                                    </li>
+                                </ul>
+                                <a href="#" class="pagination__arrow arrow">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.79289 12.7071C5.40237 12.3166 5.40237 11.6834 5.79289 11.2929L9.08579 8L5.79289 4.70711C5.40237 4.31658 5.40237 3.68342 5.79289 3.29289C6.18342 2.90237 6.81658 2.90237 7.20711 3.29289L11.2071 7.29289C11.5976 7.68342 11.5976 8.31658 11.2071 8.70711L7.20711 12.7071C6.81658 13.0976 6.18342 13.0976 5.79289 12.7071Z" fill="currentColor" />
+                                    </svg>
+                                </a>
+                            </nav>
+                            @@include('html/components/_page-sidebars.html', {
+                                "className": "site-page__sidebars--mobile site-page__sidebars--in-content authors-page__sidebars",
+                                "attrs": ""
+                            })
+                        </div>
+                        @@include('html/components/_page-sidebars.html', {
+                            "className": "site-page__sidebars--desktop",
+                            "attrs": "data-sticky-sidebar"
+                        })
+                    </div>
+                </div>
+            </div>
+        </main>
+        @@include('html/layout/_footer.html')
+        @@include('html/components/_cookie.html')
+    </div>
+    <script defer src="js/sticky-sidebar.min.js"></script>
+    <script defer src="js/swiper-bundle.min.js"></script>
+    <script type="module" src="js/script.js"></script>
+</body>
+
+</html>

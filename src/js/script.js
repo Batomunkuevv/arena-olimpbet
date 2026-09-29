@@ -1,3 +1,10 @@
+import '../css/lg-thumbnail.css';
+import '../css/lightgallery.css';
+import '../css/swiper-bundle.min.css';
+import '../scss/main.scss';
+
+const { Swiper, StickySidebar, lightGallery, lgThumbnail } = window;
+
 class Gallery {
     constructor(root) {
         this.root = root;

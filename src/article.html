@@ -1,8 +1,8 @@
-@@include('html/_head.html', { title: "Статья" })
+@@include('html/_head.html', { "title": "Статья" })
 
 <body>
   <div class="site-wrapper">
-    @@include('html/layout/_header.html',{})
+    @@include('html/layout/_header.html')
     <main class="site-page">
       <div class="container">
         <nav class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
@@ -330,7 +330,7 @@
               </p>
               <p>Исследование статистики обеих команд приводит к ставкам, которые объединяют наибольшее количество
                 трендов:</p>
-              @@include('html/article/_bonus-offer.html',{})
+              @@include('html/article/_bonus-offer.html')
               <div class="post-table">
                 <div class="post-table__body">
                   <table>
@@ -429,7 +429,7 @@
                 Olimpbet, казахстанцы — слабейшие среди участников МЧМ, а коэффициент на их триумф составляет 350.00.
               </p>
               <iframe src="https://www.youtube.com/embed/2m372C5P-j0?si=FtrATnHUfeWop03x"></iframe>
-              @@include('html/article/_player-info-card.html',{})
+              @@include('html/article/_player-info-card.html')
               <p>
                 Самый частый результат дерби — ничья в основное время. Так закончилась половина последних матчей. В
                 остальных три победы у «Интера», две — у «Ювентуса».
@@ -445,7 +445,7 @@
                 Накануне очередного Derby d’Italia тоже нет оснований полагать, что участники сыграют ярко и
                 результативно.
               </p>
-              @@include('html/article/_gallery.html',{})
+              @@include('html/article/_gallery.html')
               <ul data-accordion class="faq" itemscope itemtype="https://schema.org/FAQPage">
                 <li data-fold class="faq__item">
                   <div data-fold-btn class="faq__button" itemscope itemtype="https://schema.org/Question">
@@ -676,7 +676,7 @@
                 </li>
               </ul>
             </article>
-            @@include('html/article/_recommended-players.html',{})
+            @@include('html/article/_recommended-players.html')
             <section class="other-articles">
               <h3 class="other-articles__title h3">Читать еще</h3>
               <div class="other-articles__wrapper">
@@ -914,14 +914,14 @@
         </div>
       </div>
     </main>
-    @@include('html/layout/_footer.html',{})
-    @@include('html/components/_cookie.html',{})
+    @@include('html/layout/_footer.html')
+    @@include('html/components/_cookie.html')
   </div>
   <script defer src="js/lightgallery.min.js"></script>
   <script defer src="js/lg-thumbnail.min.js"></script>
   <script defer src="js/sticky-sidebar.min.js"></script>
   <script defer src="js/swiper-bundle.min.js"></script>
-  <script defer src="js/script.min.js"></script>
+  <script type="module" src="js/script.js"></script>
 </body>
 
 </html>

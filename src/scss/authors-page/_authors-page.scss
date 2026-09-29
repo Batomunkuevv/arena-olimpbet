@@ -1,0 +1,69 @@
+.authors-page {
+  &__breadcrumbs {
+    @media (max-width: 991px) and (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__title {
+    @media (max-width: 991px) and (min-width: 768px) {
+      margin-top: 44px;
+      font-size: 24px;
+      line-height: 28px;
+    }
+
+    @media (max-width: 767px) {
+      font-size: 22px;
+      line-height: 28px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    @media (max-width: 991px) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    @media (max-width: 767px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media (max-width: 479px) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  &__item {
+    @media (max-width: 767px) {
+      &:nth-child(n + 5) {
+        display: none;
+      }
+    }
+  }
+
+  &__pagination {
+    margin-top: 56px;
+
+    @media (max-width: 991px) {
+      margin-top: 32px;
+    }
+
+    @media (max-width: 767px) {
+      margin-top: 24px;
+    }
+  }
+
+  &__sidebars {
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+}
