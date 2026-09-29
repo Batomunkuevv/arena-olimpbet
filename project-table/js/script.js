@@ -29,6 +29,10 @@ const fillTable = () => {
             slug: 'author.html'
         },
         {
+            name: 'Все авторы',
+            slug: 'authors.html'
+        },
+        {
             name: 'Видео',
             slug: 'videos.html'
         },
