@@ -1,0 +1,40 @@
+@use "../../base/globals" as *;
+
+.footer-license {
+  &__title {
+    margin-bottom: 16px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: $generalTextTertiary;
+
+    @include max(sm) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__caption {
+    margin-bottom: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+    color: $generalTextColor;
+
+    &:not(:first-of-type) {
+      margin-top: 20px;
+    }
+  }
+
+  &__text {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: $generalTextTertiary;
+    font-feature-settings: "tnum" 1;
+
+    @include min(sm) {
+      max-width: 373px;
+    }
+  }
+}

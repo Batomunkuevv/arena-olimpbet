@@ -1,7 +1,27 @@
 @use "sass:math";
+@use "sass:map";
+@use "variables" as *;
 
 //!%
 @function toProcent($fz, $lh) {
     $result: math.round(math.div($lh, $fz) * 100%);
     @return $result;
+}
+
+@function lh($font-size, $line-height) {
+    @if $font-size == 0 {
+        @error "lh(): font-size cannot be 0";
+    }
+
+    @return math.percentage(math.div($line-height, $font-size));
+}
+
+@function bp($key) {
+    $value: map.get($breakpoints, $key);
+
+    @if $value == null {
+        @error "Breakpoint '#{$key}' not found. Available: #{map.keys($breakpoints)}";
+    }
+
+    @return #{$value}px;
 }

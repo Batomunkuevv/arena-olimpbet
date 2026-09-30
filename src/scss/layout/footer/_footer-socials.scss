@@ -1,0 +1,26 @@
+@use "../../base/globals" as *;
+
+.footer-socials {
+  margin-top: 32px;
+
+  @include max(sm) {
+    margin-top: 24px;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: $generalTextTertiary;
+
+    @include max(sm) {
+      margin-bottom: 15px;
+    }
+  }
+
+  .socials {
+    gap: 8px;
+  }
+}

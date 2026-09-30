@@ -1,0 +1,103 @@
+@use "../../base/globals" as *;
+
+.footer-help {
+  &__title {
+    margin-bottom: 16px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: $generalTextTertiary;
+
+    @include max(sm) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__caption {
+    margin-bottom: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+    color: $generalTextColor;
+
+    @include max(sm) {
+      margin-bottom: 8px;
+    }
+
+    &--compact {
+      margin-bottom: 13px;
+
+      @include max(sm) {
+        margin-bottom: 13px;
+      }
+    }
+  }
+
+  &__line {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+
+    @include max(sm) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__number {
+    flex: none;
+    min-width: 64px;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 32px;
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
+    color: $generalTextTertiary;
+
+    &:hover {
+      color: $generalTextColor;
+    }
+  }
+
+  &__note {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: $generalTextTertiary;
+  }
+
+  &__messenger {
+    display: inline-block;
+    margin-bottom: 16px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
+    color: $generalTextTertiary;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+
+    @include max(sm) {
+      margin-bottom: 14px;
+    }
+
+    &:hover {
+      color: $generalTextColor;
+    }
+  }
+
+  &__text {
+    max-width: 272px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: $generalTextTertiary;
+    font-feature-settings: "tnum" 1;
+
+    @include max(sm) {
+      max-width: 400px;
+    }
+  }
+}

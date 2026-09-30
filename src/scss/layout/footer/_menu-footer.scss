@@ -1,0 +1,38 @@
+@use "../../base/globals" as *;
+
+.menu-footer {
+  &__title {
+    margin-bottom: 16px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: $generalTextTertiary;
+
+    @include max(sm) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include max(sm) {
+      gap: 8px;
+    }
+  }
+
+  &__link {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: $generalTextTertiary;
+
+    &:hover {
+      color: $generalTextColor;
+    }
+  }
+}

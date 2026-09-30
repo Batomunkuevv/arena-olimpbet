@@ -1,0 +1,166 @@
+@use "../../base/globals" as *;
+
+.site-footer {
+  border-top: 1px solid #e2e4e9;
+  background: #fff;
+  padding: 24px 0 32px;
+  color: $generalTextTertiary;
+
+  @include max(sm) {
+    padding: 16px 0 24px;
+  }
+
+  &__head {
+    margin-bottom: 24px;
+  }
+
+  &__logo {
+    display: block;
+    width: 100%;
+    max-width: 106px;
+
+    &-ibg {
+      @include ibg-padding(106, 24);
+    }
+  }
+
+  &__nav {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 24px;
+
+    @include max(sm) {
+      grid-template-columns: 1fr 0.82fr;
+      column-gap: 16px;
+      row-gap: 24px;
+    }
+  }
+
+  &__docs {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+
+    @include max(sm) {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__sections {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 24px;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid rgba($generalTextTertiary, 0.15);
+
+    > * {
+      position: relative;
+      min-width: 0;
+    }
+
+    > :not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 4px;
+      width: 1px;
+      background: rgba(0, 0, 0, 0.1);
+
+      @include max(xl) {
+        display: none;
+      }
+    }
+
+    > :first-child {
+      @include min(xl) {
+        padding-right: 48px;
+      }
+
+      &::after {
+        right: 45px;
+      }
+    }
+
+    @include max(md) {
+      > :not(:last-child)::after {
+        content: none;
+      }
+
+      > :first-child {
+        padding-right: 0;
+      }
+    }
+
+    @include max(sm) {
+      display: flex;
+      flex-direction: column;
+      margin-top: 0;
+      padding-top: 0;
+      border-top: 0;
+
+      > *,
+      > :first-child {
+        margin: 24px -16px 0;
+        padding: 24px 16px 0;
+        border-top: 1px solid rgba($generalTextTertiary, 0.15);
+      }
+    }
+  }
+
+  &__bottom {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 29px;
+    align-items: stretch;
+    margin-top: 48px;
+
+    @include max(md) {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    @include max(sm) {
+      margin-top: 24px;
+    }
+  }
+
+  &__aside {
+    margin-bottom: 7px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+    min-width: 0;
+
+    @include max(md) {
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    @include max(sm) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 32px;
+    }
+  }
+
+  &__copyright {
+    flex: none;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: $generalTextDescription;
+
+    @include max(md) {
+      text-align: right;
+    }
+
+    @include max(sm) {
+      text-align: left;
+    }
+  }
+}

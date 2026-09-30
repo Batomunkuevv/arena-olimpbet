@@ -1,5 +1,5 @@
-@use 'sass:map';
 @use "variables" as *;
+@use "function" as *;
 
 @mixin has-scrollbar() {
     overflow: auto;
@@ -30,34 +30,30 @@
 }
 
 @mixin min($key) {
-    $bp: map.get($breakpoints, $key);
-
-    @if $bp == null {
-        @error "Breakpoint '#{$key}' not found";
-    }
-
-    @media (min-width: #{$bp}px) {
+    @media (min-width: #{bp($key)}) {
         @content;
     }
 }
 
 @mixin max($key) {
-    $bp: map.get($breakpoints, $key);
-
-    @if $bp == null {
-        @error "Breakpoint '#{$key}' not found";
-    }
-
-    @media (max-width: #{$bp}px) {
+    @media (max-width: #{bp($key)}) {
         @content;
     }
 }
 
 @mixin between($from, $to) {
-    $bp-from: map.get($breakpoints, $from);
-    $bp-to: map.get($breakpoints, $to);
-
-    @media (min-width: #{$bp-from}px) and (max-width: #{$bp-to}px) {
+    @media (min-width: #{bp($from)}) and (max-width: #{bp($to)}) {
         @content;
     }
+}
+
+@mixin media-ratio($width, $height) {
+    aspect-ratio: #{$width} / #{$height};
+}
+
+@mixin media-fill($fit: cover) {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: $fit;
 }

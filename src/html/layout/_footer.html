@@ -1,74 +1,260 @@
 <footer class="site-footer">
-    <div class="container">
-        <a href="/homepage.html" class="site-footer__logo">
-            <div class="site-footer__logo-ibg ibg">
-                <img width="106" height="25" src="images/logo.svg" alt="Arena logo" title="Arena logo" />
-            </div>
-        </a>
-        <div class="site-footer__body">
-            <nav class="site-footer__menu footer-menu">
-                <ul class="footer-menu__list">
-                    <li class="footer-menu__item">
-                        <a href="#" class="footer-menu__link">Прогнозы</a>
-                    </li>
-                    <li class="footer-menu__item">
-                        <a href="#" class="footer-menu__link">Новости</a>
-                    </li>
-                    <li class="footer-menu__item">
-                        <a href="#" class="footer-menu__link">Лучшие ставки</a>
-                    </li>
-                    <li class="footer-menu__item">
-                        <a href="#" class="footer-menu__link">Обучение</a>
-                    </li>
-                    <li class="footer-menu__item">
-                        <a href="#" class="footer-menu__link">Видео</a>
-                    </li>
-                </ul>
-            </nav>
-            <ul class="site-footer__socials socials">
-                <li class="socials__item">
-                    <a href="#" class="socials__link">
-                        <img width="16" height="16" src="images/icons/socials/telegram.svg" alt="Telegram icon"
-                            title="Telegram icon" />
-                    </a>
-                </li>
-                <li class="socials__item">
-                    <a href="#" class="socials__link">
-                        <img width="16" height="16" src="images/icons/socials/vk.svg" alt="Vk icon" title="Vk icon" />
-                    </a>
-                </li>
-                <li class="socials__item">
-                    <a href="#" class="socials__link">
-                        <img width="16" height="16" src="images/icons/socials/instagram.svg" alt="Instagram icon"
-                            title="Instagram icon" />
-                    </a>
-                </li>
-                <li class="socials__item">
-                    <a href="#" class="socials__link">
-                        <img width="16" height="16" src="images/icons/socials/tik-tok.svg" alt="Tik-tok icon"
-                            title="Tik-tok icon" />
-                    </a>
-                </li>
-                <li class="socials__item">
-                    <a href="#" class="socials__link">
-                        <img width="16" height="16" src="images/icons/socials/youtube.svg" alt="Youtube icon"
-                            title="Youtube icon" />
-                    </a>
-                </li>
-            </ul>
+  <div class="container">
+    <div class="site-footer__head">
+      <a href="/homepage.html" class="site-footer__logo">
+        <div class="site-footer__logo-ibg ibg">
+          <img
+            width="106"
+            height="24"
+            src="images/logo.svg"
+            alt="Arena"
+            title="Arena"
+          />
         </div>
-        <div class="site-footer__bottom">
-            <div class="site-footer__license">
-                <div class="site-footer__license-icon">
-                    <img width="32" height="32" src="images/icons/age.svg" alt="Age icon" title="Age icon" />
-                </div>
-                <p class="site-footer__license-text">
-                    Лицензия TOO &laquo;NetBet (НэтБэт)&raquo; &#8470;&nbsp;23019645 от&nbsp;06.09.2023 выдана
-                    ГУ&nbsp;&laquo;Комитет индустрии туризма
-                    Министерства культуры и&nbsp;спорта&nbsp;РК&raquo;
-                </p>
-            </div>
-            <p class="site-footer__copyright">Copyright © {{ currentYear() }} ТОО «NetBet»</p>
-        </div>
+      </a>
     </div>
+
+    <div class="site-footer__nav">
+      <nav class="menu-footer" aria-labelledby="footer-materials">
+        <p class="menu-footer__title" id="footer-materials">Материалы</p>
+        <ul class="menu-footer__list">
+          <li class="menu-footer__item">
+            <a href="#" class="menu-footer__link">Новости</a>
+          </li>
+          <li class="menu-footer__item">
+            <a href="#" class="menu-footer__link">Лучшие ставки</a>
+          </li>
+          <li class="menu-footer__item">
+            <a href="#" class="menu-footer__link">Прогнозы</a>
+          </li>
+          <li class="menu-footer__item">
+            <a href="#" class="menu-footer__link">Обучение</a>
+          </li>
+          <li class="menu-footer__item">
+            <a href="#" class="menu-footer__link">Видео</a>
+          </li>
+        </ul>
+      </nav>
+
+      <nav class="menu-footer" aria-labelledby="footer-about">
+        <p class="menu-footer__title" id="footer-about">О проекте</p>
+        <ul class="menu-footer__list">
+          <li class="menu-footer__item">
+            <a href="#" class="menu-footer__link">О нас</a>
+          </li>
+          <li class="menu-footer__item">
+            <a href="#" class="menu-footer__link">Наша команда</a>
+          </li>
+          <li class="menu-footer__item">
+            <a href="#" class="menu-footer__link">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="site-footer__docs">
+        <nav class="menu-footer" aria-labelledby="footer-documents">
+          <p class="menu-footer__title" id="footer-documents">Документы</p>
+          <ul class="menu-footer__list">
+            <li class="menu-footer__item">
+              <a href="#" class="menu-footer__link">Редакционная политика</a>
+            </li>
+            <li class="menu-footer__item">
+              <a href="#" class="menu-footer__link"
+                >Пользовательское соглашение</a
+              >
+            </li>
+            <li class="menu-footer__item">
+              <a href="#" class="menu-footer__link"
+                >Политика конфиденциальности</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <div class="footer-socials">
+          <p class="footer-socials__title">Соц.сети</p>
+          <ul class="socials">
+            <li class="socials__item">
+              <a href="#" class="socials__link" aria-label="Telegram">
+                <img
+                  width="16"
+                  height="16"
+                  src="images/icons/socials/telegram.svg"
+                  alt=""
+                />
+              </a>
+            </li>
+            <li class="socials__item">
+              <a href="#" class="socials__link" aria-label="ВКонтакте">
+                <img
+                  width="16"
+                  height="16"
+                  src="images/icons/socials/vk.svg"
+                  alt=""
+                />
+              </a>
+            </li>
+            <li class="socials__item">
+              <a href="#" class="socials__link" aria-label="Instagram">
+                <img
+                  width="16"
+                  height="16"
+                  src="images/icons/socials/instagram.svg"
+                  alt=""
+                />
+              </a>
+            </li>
+            <li class="socials__item">
+              <a href="#" class="socials__link" aria-label="TikTok">
+                <img
+                  width="16"
+                  height="16"
+                  src="images/icons/socials/tik-tok.svg"
+                  alt=""
+                />
+              </a>
+            </li>
+            <li class="socials__item">
+              <a href="#" class="socials__link" aria-label="YouTube">
+                <img
+                  width="16"
+                  height="16"
+                  src="images/icons/socials/youtube.svg"
+                  alt=""
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-footer__sections">
+      <div class="footer-help" aria-labelledby="footer-help">
+        <div class="footer-help__title" id="footer-help">Помощь</div>
+        <p class="footer-help__caption">Линия психологической помощи</p>
+        <div class="footer-help__line">
+          <a href="tel:150" class="footer-help__number">150</a>
+          <p class="footer-help__note">
+            круглосуточно<br />бесплатно по РК, анонимно
+          </p>
+        </div>
+        <p class="footer-help__caption footer-help__caption--compact">
+          WhatsApp линии помощи:
+        </p>
+        <a
+          href="https://wa.me/77081060810"
+          class="footer-help__messenger"
+          target="_blank"
+          rel="noopener noreferrer"
+          >+7 (708) 106-08-10</a
+        >
+        <p class="footer-help__text">
+          Анонимную и бесплатную помощь при игровой зависимости оказывают центры
+          психического здоровья в регионах Казахстан
+        </p>
+      </div>
+
+      <div class="footer-license" aria-labelledby="footer-license">
+        <div class="footer-license__title" id="footer-license">
+          Лицензия и регулятор
+        </div>
+        <p class="footer-license__caption">ТОО «NetBet» (бренд OLIMPBET)</p>
+        <p class="footer-license__text">
+          Медиапроект аффилирован с лицензированным организатором игорного
+          бизнеса. Лицензия № 23019645 от 06.09.2023, выдана Комитетом по
+          регулированию игорного бизнеса и лотереи Министерства туризма и спорта
+          Республики Казахстан
+        </p>
+        <p class="footer-license__caption">Адрес регулятора</p>
+        <p class="footer-license__text">
+          010000, г. Астана,<br />
+          проспект Мәңгілік ел 8, «Дом министерств», 15-подъезд.<br />
+          Тел.: 8 (7172) 74-03-39.
+        </p>
+      </div>
+
+      <div class="footer-legal" aria-labelledby="footer-legal">
+        <div class="footer-legal__title" id="footer-legal">
+          Правовая регуляция
+        </div>
+        <div class="footer-legal__notes">
+          <p class="footer-legal__text">
+            Материалы носят информационно-аналитический характер и не являются
+            финансовой, инвестиционной или юридической рекомендацией.
+          </p>
+          <p class="footer-legal__text">
+            Прогнозы и оценки авторов не гарантируют результат и не могут
+            служить обещанием выигрыша.
+          </p>
+          <p class="footer-legal__text">
+            Сайт может использовать партнёрские ссылки; вознаграждение не влияет
+            на выводы и оценки материалов.
+          </p>
+        </div>
+        <a href="#" class="footer-legal__action">ответственная игра →</a>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <aside class="age-notice">
+        <img
+          class="age-notice__badge"
+          width="32"
+          height="32"
+          src="images/footer/age.svg"
+          alt="21+"
+        />
+        <p class="age-notice__text">
+          Участие в азартных играх и пари связано с риском возникновения
+          зависимости и может привести к потере денег. Азартные игры — не
+          способ заработка. Участие разрешено только лицам 21 года и старше.
+        </p>
+        <ul class="age-notice__links">
+          <li class="age-notice__item">
+            <a href="#" class="age-notice__link age-notice__link--underline"
+              >Ответственная игра</a
+            >
+          </li>
+          <li class="age-notice__item">
+            <a href="#" class="age-notice__link"
+              >Самоограничение через eGov Mobile</a
+            >
+          </li>
+          <li class="age-notice__item">
+            <a href="#" class="age-notice__link">Помощь при зависимости</a>
+          </li>
+        </ul>
+      </aside>
+
+      <div class="site-footer__aside">
+        <div class="abroad-help">
+          <p class="abroad-help__label">помощь на английском языке:</p>
+          <ul class="abroad-help__list">
+            <li class="abroad-help__item">
+              <a
+                href="https://www.begambleaware.org/"
+                class="abroad-help__link"
+                target="_blank"
+                rel="noopener noreferrer"
+                >BeGambleAware.org</a
+              >
+            </li>
+            <li class="abroad-help__item">
+              <a
+                href="https://www.gamblingtherapy.org/"
+                class="abroad-help__link"
+                target="_blank"
+                rel="noopener noreferrer"
+                >GamblingTherapy.org</a
+              >
+            </li>
+          </ul>
+        </div>
+        <p class="site-footer__copyright">
+          Copyright © {{ currentYear() }} ТОО «NetBet»
+        </p>
+      </div>
+    </div>
+  </div>
 </footer>
