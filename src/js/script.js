@@ -391,6 +391,33 @@ class Arena {
                     }
                     break;
                 }
+                case 'partners': {
+                    const partnersRoot = slider.closest('.partners');
+                    const partnersPrev = partnersRoot.querySelector('.partners__arrow--prev');
+                    const partnersNext = partnersRoot.querySelector('.partners__arrow--next');
+
+                    options = {
+                        ...options,
+                        loop: true,
+                        slidesPerView: 'auto',
+                        spaceBetween: 24,
+                        navigation: {
+                            prevEl: partnersPrev,
+                            nextEl: partnersNext,
+                        },
+                        autoplay: {
+                            delay: 2500,
+                            disableOnInteraction: false,
+                            pauseOnMouseEnter: true,
+                        },
+                        breakpoints: {
+                            768: {
+                                spaceBetween: 40,
+                            },
+                        },
+                    };
+                    break;
+                }
             }
 
             return options;

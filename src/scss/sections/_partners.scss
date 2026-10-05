@@ -1,0 +1,86 @@
+@use "../base/globals" as *;
+
+.partners {
+    margin-top: 64px;
+    margin-bottom: 40px;
+
+    @include max(sm) {
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+
+    &__title {
+        margin-bottom: 24px;
+    }
+
+    &__slider {
+        position: relative;
+    }
+
+    &__slide {
+        width: fit-content !important;
+        height: auto;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 56px;
+
+        @include max(sm) {
+            height: 24px;
+        }
+
+        img {
+            display: block;
+            width: auto;
+            height: auto;
+            max-width: none;
+            object-fit: contain;
+            object-position: center;
+            filter: grayscale(1) contrast(0.25) brightness(1.5);
+            transition: filter 0.3s ease-in-out;
+
+            @include max(sm) {
+                max-height: 24px;
+            }
+        }
+
+        &:hover img,
+        &:focus-visible img {
+            filter: none;
+        }
+    }
+
+    &__arrow {
+        position: absolute;
+        top: 50%;
+        z-index: 2;
+
+        &.swiper-button-disabled {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        &--prev {
+            left: 0;
+            display: none;
+            transform: translate(-50%, -52%);
+
+            @include max(sm) {
+                display: flex;
+                transform: translateY(-50%);
+            }
+        }
+
+        &--next {
+            right: 0;
+            transform: translate(50%, -52%);
+
+            @include max(sm) {
+                transform: translateY(-50%);
+            }
+        }
+    }
+}
