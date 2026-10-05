@@ -3,8 +3,6 @@ import '../css/lightgallery.css';
 import '../css/swiper-bundle.min.css';
 import '../scss/main.scss';
 
-const { Swiper, StickySidebar, lightGallery, lgThumbnail } = window;
-
 class Gallery {
     constructor(root) {
         this.root = root;
@@ -15,7 +13,7 @@ class Gallery {
         this.showBy = 3;
         this.options = {
             selector: '[data-gallery-item]',
-            plugins: [lgThumbnail],
+            plugins: [window.lgThumbnail],
             thumbnail: true,
             zoom: true,
             download: true,
@@ -37,7 +35,7 @@ class Gallery {
     }
 
     init() {
-        lightGallery(this.root, this.options);
+        window.lightGallery(this.root, this.options);
         this.bindEvents();
     }
 
@@ -204,6 +202,10 @@ class Arena {
             grabCursor: true,
             spaceBetween: 24,
         }
+
+        const { Swiper } = window;
+
+        if (typeof Swiper !== 'function') return;
 
         sliders.forEach(slider => {
             const sliderType = slider.dataset.slider;
@@ -662,7 +664,7 @@ class Arena {
                 minWidth: 991,
                 innerWrapperSelector: '.site-page__sidebars-body',
             }
-            const stickySidebarInstance = new StickySidebar(stickySidebar, options);
+            const stickySidebarInstance = new window.StickySidebar(stickySidebar, options);
 
             setTimeout(() => {
                 stickySidebarInstance.updateSticky();
