@@ -15,6 +15,43 @@
 
     &__slider {
         position: relative;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            z-index: 2;
+            width: 88px;
+            height: 100%;
+            pointer-events: none;
+
+            @include max(sm) {
+                width: 48px;
+            }
+        }
+
+        &::before {
+            left: 0;
+            background: linear-gradient(
+                to right,
+                $generalPageBg 0%,
+                rgba($generalPageBg, 0.72) 24%,
+                rgba($generalPageBg, 0.32) 58%,
+                rgba($generalPageBg, 0) 100%
+            );
+        }
+
+        &::after {
+            right: 0;
+            background: linear-gradient(
+                to right,
+                rgba($generalPageBg, 0) 0%,
+                rgba($generalPageBg, 0.32) 42%,
+                rgba($generalPageBg, 0.72) 76%,
+                $generalPageBg 100%
+            );
+        }
     }
 
     &__slide {
@@ -53,10 +90,15 @@
         }
     }
 
+    &__body {
+        z-index: 1;
+    }
+
     &__arrow {
         position: absolute;
         top: 50%;
-        z-index: 2;
+        z-index: 3;
+        transform: translateY(-50%);
 
         &.swiper-button-disabled {
             opacity: 0;
@@ -65,22 +107,10 @@
 
         &--prev {
             left: 0;
-            display: none;
-            transform: translate(-50%, -52%);
-
-            @include max(sm) {
-                display: flex;
-                transform: translateY(-50%);
-            }
         }
 
         &--next {
             right: 0;
-            transform: translate(50%, -52%);
-
-            @include max(sm) {
-                transform: translateY(-50%);
-            }
         }
     }
 }
