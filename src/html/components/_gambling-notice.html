@@ -1,0 +1,35 @@
+<aside class="gambling-notice {{ typeof modifier !== 'undefined' ? modifier : '' }}" data-gambling-notice
+  aria-label="Предупреждение об ответственной игре">
+  <div class="gambling-notice__inner">
+    <div class="gambling-notice__body">
+      <div class="gambling-notice__text">
+        <p class="gambling-notice__paragraph">{{ typeof text !== 'undefined' ? text : 'Этот материал НЕ является призывом к ставкам. Он создан для тех, кто уже принял решение играть.' }}</p>
+        <p class="gambling-notice__paragraph">{{ typeof textSecondary !== 'undefined' ? textSecondary : 'Мы настоятельно рекомендуем установить лимиты и не превышать их ни при каких обстоятельствах.' }}</p>
+      </div>
+      <div class="gambling-notice__footer">
+        <ul class="gambling-notice__links">
+          <li class="gambling-notice__item">
+            <a href="{{ typeof responsibleGamingUrl !== 'undefined' ? responsibleGamingUrl : '#' }}"
+              class="gambling-notice__link">Ответственная игра</a>
+          </li>
+          <li class="gambling-notice__item">
+            <a href="{{ typeof selfExclusionUrl !== 'undefined' ? selfExclusionUrl : '#' }}"
+              class="gambling-notice__link">Самоограничение через eGov Mobile</a>
+          </li>
+          <li class="gambling-notice__item">
+            <a href="{{ typeof addictionHelpUrl !== 'undefined' ? addictionHelpUrl : '#' }}"
+              class="gambling-notice__link">Помощь при зависимости</a>
+          </li>
+        </ul>
+        <button type="button" class="gambling-notice__hide" data-gambling-notice-hide
+          aria-label="Скрыть предупреждение об ответственной игре">
+          <span class="gambling-notice__hide-label">скрыть</span>
+          <svg class="gambling-notice__hide-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
+            aria-hidden="true" focusable="false">
+            <path d="M3.5 3.5l9 9m0-9l-9 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</aside>

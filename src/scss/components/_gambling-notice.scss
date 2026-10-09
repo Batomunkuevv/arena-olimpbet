@@ -1,0 +1,257 @@
+@use "../base/globals" as *;
+
+// Плашка «ответственная игра» (Figma: «Одна статья», слой notice).
+//
+// Разметка: html/components/_gambling-notice.html, логика скрытия: GamblingNotice в js/script.js.
+//
+// @@include('html/components/_gambling-notice.html')
+// @@include('html/components/_gambling-notice.html', {
+//     "modifier": "gambling-notice--button",
+//     "text": "…", "textSecondary": "…",
+//     "responsibleGamingUrl": "…", "selfExclusionUrl": "…", "addictionHelpUrl": "…"
+// })
+//
+// Модификаторы:
+//   gambling-notice--button — «скрыть» белой кнопкой с крестиком (мобильный notice-bottom в макете).
+//
+// «Скрыть» прячет плашки только до перезагрузки страницы, состояние нигде не сохраняется:
+// при каждом открытии страницы плашка снова видна.
+
+$noticeTextColor: #333c4d;
+$noticeBorderColor: #c4c9d4;
+$noticeHoverColor: #2a303c;
+$noticeDuration: 0.3s;
+
+.gambling-notice {
+    display: grid;
+    grid-template-rows: 1fr;
+    margin: 24px 0;
+    transition:
+        grid-template-rows $noticeDuration ease-in-out,
+        opacity $noticeDuration ease-in-out,
+        margin $noticeDuration ease-in-out;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    @include max(sm) {
+        margin: 16px 0;
+    }
+
+    &.is-hiding {
+        grid-template-rows: 0fr;
+        margin-top: 0;
+        margin-bottom: 0;
+        opacity: 0;
+    }
+
+    &[hidden] {
+        display: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        transition: none;
+    }
+
+    &__inner {
+        min-height: 0;
+        overflow: hidden;
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        background: $grayCardBg;
+        border-radius: 8px;
+        // Обводка внутрь, как в Figma (stroke inside): не съедает ширину текста.
+        box-shadow: inset 0 0 0 1px $noticeBorderColor;
+
+        @include max(sm) {
+            gap: 16px;
+            padding: 16px;
+        }
+    }
+
+    &__paragraph {
+        font-size: 16px;
+        line-height: lh(16, 24);
+        font-weight: 400;
+        color: $noticeTextColor;
+
+        & + & {
+            @include max(sm) {
+                margin-top: 24px;
+            }
+        }
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px 16px;
+
+        @include max(sm) {
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 12px;
+        }
+    }
+
+    &__links {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px 12px;
+
+        @include max(sm) {
+            flex-direction: column;
+            align-items: flex-start;
+            align-self: stretch;
+            gap: 8px;
+        }
+    }
+
+    &__item {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 14px;
+        line-height: lh(14, 16);
+        font-weight: 400;
+        color: $generalTextTertiary;
+
+        &:not(:last-child)::after {
+            content: "•";
+        }
+
+        @include max(sm) {
+            position: relative;
+            padding-left: 21px;
+
+            &::before {
+                content: "•";
+                position: absolute;
+                top: 0;
+                left: 7px;
+            }
+
+            &:not(:last-child)::after {
+                content: none;
+            }
+        }
+    }
+
+    &__link,
+    &__hide {
+        font-size: 14px;
+        line-height: lh(14, 16);
+        font-weight: 600;
+        color: $generalTextTertiary;
+
+        &:focus-visible {
+            outline: 2px solid $generalTextTertiary;
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+    }
+
+    // Подчёркивание — состояние hover/focus из макета, по умолчанию ссылки без него.
+    // Линия есть всегда, но прозрачная, поэтому появляется плавно и текст не сдвигается.
+    // Сброс проекта `a, a:visited, a:hover { text-decoration: none }` (0,1,1) сильнее одиночного
+    // класса, поэтому линия задаётся в каждом состоянии селекторами не слабее 0,2,0.
+    &__link,
+    &__link:link,
+    &__link:visited,
+    &__link:hover,
+    &__link:focus,
+    &__hide-label {
+        text-decoration: underline 1px transparent;
+        text-underline-offset: 2px;
+        transition: text-decoration-color 0.3s ease-in-out 0s;
+    }
+
+    &__link:focus-visible,
+    &__hide:focus-visible &__hide-label {
+        text-decoration-color: currentColor;
+    }
+
+    @media (any-hover: hover) {
+        &__link:hover,
+        &__hide:hover &__hide-label {
+            text-decoration-color: currentColor;
+        }
+    }
+
+    &__link {
+        // В макете 375 «Самоограничение через eGov Mobile» шире колонки на 2px и не переносится.
+        @include max(sm) {
+            white-space: nowrap;
+        }
+
+        @include max(xxs) {
+            white-space: normal;
+        }
+    }
+
+    &__hide {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        flex: none;
+        padding: 0;
+        background: none;
+        border: 0;
+
+        // Область нажатия больше видимого текста, вёрстку не сдвигает.
+        &::before {
+            content: "";
+            position: absolute;
+            inset: -12px -8px;
+        }
+    }
+
+    &__hide-icon {
+        display: none;
+        flex: none;
+        width: 16px;
+        height: 16px;
+        color: $noticeHoverColor;
+    }
+
+    &--button &__body {
+        @include max(sm) {
+            gap: 12px;
+        }
+    }
+
+    &--button &__hide {
+        padding: 7px 11px;
+        background: #fff;
+        border: 1px solid $noticeBorderColor;
+        border-radius: 8px;
+
+        &::before {
+            content: none;
+        }
+    }
+
+    &--button &__hide-icon {
+        display: block;
+    }
+}
+
+// В статье на мобильном между плашкой и оглавлением 16px, как после обложки.
+.gambling-notice + .article-toc {
+    @include max(sm) {
+        margin-top: 16px;
+    }
+}

@@ -63,6 +63,90 @@ class Gallery {
     }
 }
 
+class GamblingNotice {
+    static REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    static hideAll(source) {
+        document.querySelectorAll('[data-gambling-notice]').forEach((notice) => {
+            if (notice.hidden) return;
+
+            const rect = notice.getBoundingClientRect();
+            const isAboveViewport = notice !== source && rect.bottom <= 0;
+
+            if (isAboveViewport) {
+                // Плашка уже проскроллена: убираем сразу и компенсируем прокрутку, чтобы контент не прыгнул.
+                const anchor = notice.nextElementSibling || notice.parentElement;
+                const anchorTop = anchor.getBoundingClientRect().top;
+
+                notice.hidden = true;
+                window.scrollBy(0, anchor.getBoundingClientRect().top - anchorTop);
+                return;
+            }
+
+            GamblingNotice.collapse(notice);
+        });
+    }
+
+    static collapse(notice) {
+        let fallbackTimer = null;
+
+        const finish = () => {
+            clearTimeout(fallbackTimer);
+            notice.hidden = true;
+            notice.classList.remove('is-hiding');
+        };
+
+        if (GamblingNotice.REDUCED_MOTION.matches) {
+            finish();
+            return;
+        }
+
+        notice.addEventListener('transitionend', function handleTransitionEnd(event) {
+            if (event.target !== notice || event.propertyName !== 'grid-template-rows') return;
+
+            notice.removeEventListener('transitionend', handleTransitionEnd);
+            finish();
+        });
+
+        notice.classList.add('is-hiding');
+        // Страховка, если transitionend не придёт (вкладка в фоне, стили не догрузились).
+        fallbackTimer = setTimeout(finish, 500);
+    }
+
+    constructor(root) {
+        this.root = root;
+        this.hideButton = this.root.querySelector('[data-gambling-notice-hide]');
+
+        this.init();
+    }
+
+    init() {
+        this.hideButton?.addEventListener('click', this.handleHideClick.bind(this));
+    }
+
+    handleHideClick() {
+        const hadFocus = this.root.contains(document.activeElement);
+
+        GamblingNotice.hideAll(this.root);
+
+        if (hadFocus) this.moveFocus();
+    }
+
+    moveFocus() {
+        // Кнопка исчезает — переводим фокус на следующий за плашкой блок, чтобы клавиатура не потеряла место.
+        const target = this.root.nextElementSibling || this.root.parentElement;
+
+        if (!target) return;
+
+        if (!target.hasAttribute('tabindex')) {
+            target.setAttribute('tabindex', '-1');
+            target.addEventListener('blur', () => target.removeAttribute('tabindex'), { once: true });
+        }
+
+        target.focus({ preventScroll: true });
+    }
+}
+
 class Arena {
     static MAX_MEDIA_1200 = window.matchMedia('(max-width: 1200px)');
     static MAX_MEDIA_992 = window.matchMedia('(max-width: 991px)');
@@ -78,6 +162,7 @@ class Arena {
         this.initCookie();
         this.initSearches();
         this.initGalleries();
+        this.initGamblingNotices();
     }
 
     initSearches() {
@@ -692,6 +777,14 @@ class Arena {
         if (!galleries.length || typeof window.lightGallery !== 'function') return;
 
         galleries.forEach(gallery => new Gallery(gallery));
+    }
+
+    initGamblingNotices() {
+        const notices = document.querySelectorAll('[data-gambling-notice]');
+
+        if (!notices.length) return;
+
+        notices.forEach(notice => new GamblingNotice(notice));
     }
 }
 
