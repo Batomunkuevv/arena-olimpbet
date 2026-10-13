@@ -159,11 +159,16 @@
                     <li class="menu__item">
                         <a href="#" class="menu__link">Видео</a>
                     </li>
-                    <li class="menu__item">
-                        <a href="#" class="menu__link">Қазақша</a>
-                    </li>
                 </ul>
+                @@include('../components/_lang-switcher.html', {
+                    "modifier": "lang-switcher--menu",
+                    "id": "lang-switcher-menu"
+                })
             </nav>
+            @@include('../components/_lang-switcher.html', {
+                "modifier": "lang-switcher--header",
+                "id": "lang-switcher-header"
+            })
             <form action="#" class="site-header__search search">
                 <div class="search__wrapper">
                     <input type="text" name="search" placeholder="Поиск"

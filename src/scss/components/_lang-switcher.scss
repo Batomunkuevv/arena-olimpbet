@@ -1,0 +1,172 @@
+@use "../base/globals" as *;
+
+$langArrowColor: #c4c9d4;
+$langBorderColor: #e2e4e9;
+$langHoverBg: #f0f1f4;
+$langDuration: 0.2s;
+$langOpenDuration: 0.2s;
+$langCloseDuration: 0.15s;
+$langEase: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+.lang-switcher {
+    position: relative;
+    flex: none;
+
+    &__toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        background: transparent;
+        border: 0;
+        border-radius: 8px;
+        box-shadow: inset 0 0 0 1px $langBorderColor;
+        font-size: 14px;
+        line-height: lh(14, 20);
+        font-weight: 500;
+        color: $generalTextSecondary;
+        cursor: pointer;
+        transition: box-shadow $langDuration $langEase;
+
+        &:focus-visible {
+            outline: 2px solid $generalTextTertiary;
+            outline-offset: 2px;
+        }
+    }
+
+    &__globe {
+        flex: none;
+        color: $generalTextTertiary;
+    }
+
+    &__arrow {
+        flex: none;
+        color: $langArrowColor;
+        transition: transform $langOpenDuration $langEase;
+    }
+
+    &.is-open &__arrow {
+        transform: rotate(180deg);
+    }
+
+    &__list {
+        position: absolute;
+        top: calc(100% + 4px);
+        left: 0;
+        z-index: 20;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        width: 160px;
+        padding: 12px 8px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: inset 0 0 0 1px $langBorderColor;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-4px);
+        transition:
+            opacity $langCloseDuration $langEase,
+            transform $langCloseDuration $langEase,
+            visibility 0s linear $langCloseDuration;
+    }
+
+    &.is-open &__list {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: none;
+        transition:
+            opacity $langOpenDuration $langEase,
+            transform $langOpenDuration $langEase,
+            visibility 0s;
+    }
+
+    &__option,
+    &__option:link,
+    &__option:visited,
+    &__option:hover {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 4px 8px;
+        border-radius: 8px;
+        font-size: 14px;
+        line-height: lh(14, 20);
+        font-weight: 500;
+        color: $generalTextSecondary;
+        text-decoration: none;
+        transition: background-color $langDuration $langEase;
+    }
+
+    &__option:focus-visible {
+        outline: 2px solid $generalTextTertiary;
+        outline-offset: -2px;
+    }
+
+    @media (any-hover: hover) {
+        &__option:hover {
+            background-color: $langHoverBg;
+        }
+    }
+
+    &__option:focus-visible {
+        background-color: $langHoverBg;
+    }
+
+    &__option-label {
+        flex: 1;
+        min-width: 0;
+    }
+
+    &__check {
+        display: none;
+        flex: none;
+        color: $generalTextTertiary;
+    }
+
+    &__option.is-selected &__check {
+        display: block;
+    }
+
+    &--header {
+        @include max(md) {
+            display: none;
+        }
+    }
+
+    &--menu {
+        align-self: flex-start;
+        margin-top: 16px;
+
+        @media (min-width: 992px) {
+            display: none;
+        }
+    }
+
+    &--menu &__toggle {
+        background: #fff;
+    }
+
+    &--up &__list {
+        top: auto;
+        bottom: calc(100% + 4px);
+        transform: translateY(4px);
+    }
+
+    &--up.is-open &__list {
+        transform: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        &__list,
+        &--up &__list {
+            transform: none;
+        }
+
+        &__arrow {
+            transition: none;
+        }
+    }
+}

@@ -63,6 +63,57 @@ class Gallery {
     }
 }
 
+class LangSwitcher {
+    constructor(root) {
+        this.root = root;
+        this.toggle = this.root.querySelector('[data-lang-switcher-toggle]');
+        this.list = this.root.querySelector('[data-lang-switcher-list]');
+
+        if (!this.toggle || !this.list) return;
+
+        this.handleDocumentClick = this.handleDocumentClick.bind(this);
+        this.handleKeydown = this.handleKeydown.bind(this);
+        this.toggle.addEventListener('click', () => (this.isOpen() ? this.close() : this.open()));
+    }
+
+    isOpen() {
+        return this.root.classList.contains('is-open');
+    }
+
+    open() {
+        this.root.classList.add('is-open');
+        this.toggle.setAttribute('aria-expanded', 'true');
+        document.addEventListener('click', this.handleDocumentClick);
+        document.addEventListener('keydown', this.handleKeydown);
+    }
+
+    close(returnFocus = false) {
+        this.root.classList.remove('is-open');
+        this.toggle.setAttribute('aria-expanded', 'false');
+        document.removeEventListener('click', this.handleDocumentClick);
+        document.removeEventListener('keydown', this.handleKeydown);
+
+        if (returnFocus) this.toggle.focus();
+    }
+
+    handleDocumentClick(event) {
+        if (!this.root.contains(event.target)) this.close();
+    }
+
+    handleKeydown(event) {
+        if (event.key === 'Escape') {
+            this.close(this.root.contains(document.activeElement));
+            return;
+        }
+
+        if (event.key === 'Tab') {
+            requestAnimationFrame(() => {
+                if (!this.root.contains(document.activeElement)) this.close();
+            });
+        }
+    }
+}
+
 class GamblingNotice {
     static REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)');
 
@@ -162,6 +213,7 @@ class Arena {
         this.initCookie();
         this.initSearches();
         this.initGalleries();
+        this.initLangSwitchers();
         this.initGamblingNotices();
     }
 
@@ -777,6 +829,10 @@ class Arena {
         if (!galleries.length || typeof window.lightGallery !== 'function') return;
 
         galleries.forEach(gallery => new Gallery(gallery));
+    }
+
+    initLangSwitchers() {
+        document.querySelectorAll('[data-lang-switcher]').forEach(root => new LangSwitcher(root));
     }
 
     initGamblingNotices() {
